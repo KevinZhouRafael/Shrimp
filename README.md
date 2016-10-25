@@ -5,11 +5,52 @@
 [![License](https://img.shields.io/cocoapods/l/ShrimpHttp.svg?style=flat)](http://cocoapods.org/pods/ShrimpHttp)
 [![Platform](https://img.shields.io/cocoapods/p/ShrimpHttp.svg?style=flat)](http://cocoapods.org/pods/ShrimpHttp)
 
+ShrimpHttp is an simplify HTTP networking library written in Swift.
+
+## Features
+
+- [x] Chainable Request / Response Methods
+- [x] Parameter Encoding
+- [x] GET / POST / PUT / DELETE
+- [x] Builtin JSON Request Serialization
+- [ ] NSOperationQueue Support
+- [ ] Download File using Request or Resume Data
+- [ ] Upload/Download with Progress Closure
+
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+### GET
+
+```swift
+        ShrimpRequest().request(.GET, urlString: "https://httpbin.org/get")
+        .responseString ({ (string, response) in
+            debugPrint("GET: \(string)")
+        })
+```
+
+### POST
+
+```swift
+
+        ShrimpRequest().request(.POST, urlString: "http://www.mocky.io/v2/56c5b7a80f0000d027a204e2", parameters: ["username":"rafael",
+            "password":"123456"])
+        .responseJSON({ (json, response) in
+            debugPrint(json["first_name"].string)
+            debugPrint(json["last_name"].string)
+            debugPrint(json["gender"].string)
+            
+            }, errorHandler: { (error) in
+                
+        })
+```
+
 ## Requirements
+- iOS 8.0+  
+- Xcode 7.3
+- Swift 2.2
 
 ## Installation
 
@@ -22,7 +63,7 @@ pod "ShrimpHttp"
 
 ## Author
 
-rafael zhou, 2008zkapie@163.com
+rafael zhou, wumingapie@gmail.com
 
 ## License
 
