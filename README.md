@@ -37,11 +37,10 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
         ShrimpRequest().request(.POST, urlString: "http://www.mocky.io/v2/56c5b7a80f0000d027a204e2", parameters: ["username":"rafael",
             "password":"123456"])
-        .responseJSON({ (json, response) in
-            debugPrint(json["first_name"].string)
-            debugPrint(json["last_name"].string)
-            debugPrint(json["gender"].string)
-            
+        .responseJSONObject({ (json, response) in
+                debugPrint(json["first_name"])
+                debugPrint(json["last_name"])
+                debugPrint(json["gender"])            
             }, errorHandler: { (error) in
                 
         })
