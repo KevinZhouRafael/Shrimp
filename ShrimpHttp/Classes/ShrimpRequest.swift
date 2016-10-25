@@ -167,7 +167,7 @@ public class ShrimpRequest {
                     
                     let resultString = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
                     
-                    print("Result -> \(resultString)")
+                    debugPrint("***ShrimpRequest-- Request URL --> \( response!.URL!.absoluteString) \n Result -> \(resultString)")
                     
                     
                     dispatch_async(dispatch_get_main_queue()) {
@@ -182,7 +182,7 @@ public class ShrimpRequest {
                                 
                             } catch _ as NSError {
                                 if self.errorHandler != nil {
-                                    self.errorHandler!(error: ShrimpError.createError(code,localizedDescription: "JSON解析错误"))
+                                    self.errorHandler!(error: ShrimpError.createError(code,localizedDescription: "JSON serialization error"))
                                 }
                             }
                             

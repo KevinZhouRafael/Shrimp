@@ -39,16 +39,17 @@ class ViewController: UIViewController {
             "username":"rafael",
             "password":"123456"]
         
-        
-        ShrimpRequest().request(.POST, urlString: "http://www.mocky.io/v2/56c5b7a80f0000d027a204e2", parameters: params).responseJSON({ (json, response) in
-            debugPrint(json["first_name"].string)
-            debugPrint(json["last_name"].string)
-            debugPrint(json["gender"].string)
+        ShrimpRequest().request(.POST, urlString: "http://www.mocky.io/v2/56c5b7a80f0000d027a204e2", parameters: params)
+            .responseJSONObject({ (json, response) in
             
-            
-            }, errorHandler: { (error) in
+                let dic = json as! [String:AnyObject]
+                debugPrint(dic["first_name"])
+                debugPrint(dic["last_name"])
+                debugPrint(json["gender"])
                 
-        })
+            }) { (error) in
+                
+        }
         
         
     }
