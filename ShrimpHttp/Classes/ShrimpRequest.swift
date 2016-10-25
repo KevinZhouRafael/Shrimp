@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import SwiftyJSON
-
 public class ShrimpRequest {
     
     
@@ -17,7 +15,6 @@ public class ShrimpRequest {
     private var task:NSURLSessionDataTask!
     private var responseDataHandler:((data:NSData,response:NSURLResponse)->Void)?
     private var responseStringHandler:((string:String,response:NSURLResponse)->Void)?
-    private var responseJSONHandler:((json:JSON,response:NSURLResponse)->Void)?
     private var responseJSONObjectHandler:((json:AnyObject,response:NSURLResponse)->Void)?
     private var errorHandler:((error:NSError)->Void)?
     
@@ -56,9 +53,6 @@ public class ShrimpRequest {
             requestURL = NSURL(string:"\(urlString)?\(parameters?.stringFromHttpParameters())")!
             break
         case .POST, .PUT, .DELETE:
-            
-            break
-        default:
             
             break
             
@@ -118,8 +112,6 @@ public class ShrimpRequest {
                     }
                     break;
                     
-                default: break
-                    
                 }
 
 
@@ -160,15 +152,6 @@ public class ShrimpRequest {
         return self
     }
     
-    public func responseJSON(responseHandler:(json:JSON,response:NSURLResponse)->Void,errorHandler:((error:NSError)->Void)? = nil)->ShrimpRequest{
-        
-        self.responseJSONHandler = responseHandler
-        self.errorHandler = errorHandler
-        
-        requestNetWork()
-        
-        return self
-    }
     
     private func requestNetWork(){
         let session = NSURLSession(configuration: config)
@@ -182,21 +165,16 @@ public class ShrimpRequest {
                 let acceptableStatusCodes: Range<Int> = 200..<300
                 if acceptableStatusCodes.contains(httpResponse.statusCode) {
                     
-                    let string = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+                    let resultString = NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
                     
-                    print(string)
+                    print("Result -> \(resultString)")
                     
-                    let result = JSON(data: data!)
-                    
-                    print("Result -> \(result)")
                     
                     dispatch_async(dispatch_get_main_queue()) {
                         if self.responseDataHandler != nil {
                             self.responseDataHandler!(data: data!,response:response!)
                         }else if self.responseStringHandler != nil {
-                            self.responseStringHandler!(string:string,response:response!)
-                        }else if self.responseJSONHandler != nil {
-                            self.responseJSONHandler!(json:result,response:response!)
+                            self.responseStringHandler!(string:resultString,response:response!)
                         }else if self.responseJSONObjectHandler != nil {
                             do {
                                 let object: AnyObject = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)

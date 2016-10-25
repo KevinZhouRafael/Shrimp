@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'ShrimpHttp'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of ShrimpHttp.'
+  s.summary          = 'ShrimpHttp is an simplify HTTP networking library.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,14 +18,14 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+ShrimpHttp is an simplify HTTP networking library written in Swift.
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/ShrimpHttp'
+  s.homepage         = 'https://github.com/KevinChouRafael/ShrimpHttp'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'rafael zhou' => '2008zkapie@163.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/ShrimpHttp.git', :tag => s.version.to_s }
+  s.author           = { 'rafael zhou' => 'wumingapie@gmail.com' }
+  s.source           = { :git => 'https://github.com/KevinChouRafael/ShrimpHttp.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
@@ -38,5 +38,5 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-   s.dependency 'SwiftyJSON', '~> 2.3.2'
+  # s.dependency 'SwiftyJSON', '~> 2.4.0'
 end

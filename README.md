@@ -12,7 +12,7 @@ ShrimpHttp is an simplify HTTP networking library written in Swift.
 - [x] Chainable Request / Response Methods
 - [x] Parameter Encoding
 - [x] GET / POST / PUT / DELETE
-- [x] Builtin JSON Request Serialization
+- [ ] Builtin JSON Request Serialization
 - [ ] NSOperationQueue Support
 - [ ] Download File using Request or Resume Data
 - [ ] Upload/Download with Progress Closure
