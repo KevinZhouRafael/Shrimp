@@ -117,11 +117,11 @@ func downloadComplete(noti:Notification) {
 ## Installation
 
 ###Cocoapods
-ShrimpHttp is available through [CocoaPods](http://cocoapods.org). To install
+Shrimp is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "ShrimpHttp"
+pod "Shrimp"
 ```
 
 ###Carthage
@@ -138,4 +138,4 @@ rafael zhou, wumingapie@gmail.com
 
 ## License
 
-ShrimpHttp is available under the MIT license. See the LICENSE file for more info.
+Shrimp is available under the MIT license. See the LICENSE file for more info.
