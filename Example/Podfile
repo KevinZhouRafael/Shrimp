@@ -1,6 +1,6 @@
 use_frameworks!
 
 target 'Example' do
-  pod 'ShrimpHttp’, :path => '../'
+  pod 'Shrimp’, :path => '../'
 
 end

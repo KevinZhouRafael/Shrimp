@@ -1,19 +1,19 @@
 PODS:
   - CryptoSwift (0.6.7)
-  - ShrimpHttp (0.2.0):
+  - Shrimp (0.2.0):
     - CryptoSwift (~> 0.6.7)
 
 DEPENDENCIES:
-  - ShrimpHttp (from `../`)
+  - Shrimp (from `../`)
 
 EXTERNAL SOURCES:
-  ShrimpHttp:
+  Shrimp:
     :path: "../"
 
 SPEC CHECKSUMS:
   CryptoSwift: 685ae257941e5447474348a2b545583e1a16b573
-  ShrimpHttp: b3e5cbbcc0049e8275bd0042b4a1217b8caca712
+  Shrimp: 14f24036e4ea463d3556181ca5779a80542b77c1
 
-PODFILE CHECKSUM: 7f98990ad2f0e89085ae7a541da20b5a750ad68a
+PODFILE CHECKSUM: 4a27d6de3aa8a4658ae6b3550e778a289c01b80c
 
 COCOAPODS: 1.2.0

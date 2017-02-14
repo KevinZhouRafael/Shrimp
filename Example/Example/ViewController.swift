@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ShrimpHttp
+import Shrimp
 
 class ViewController: UIViewController {
 

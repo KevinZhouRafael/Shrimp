@@ -189,7 +189,7 @@ open class ShrimpRequest {
                                 let object: Any = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
                                 self.responseJSONObjectHandler!(object,response!)
                                 
-                            } catch _ as Error {
+                            } catch {
                                 if self.errorHandler != nil {
                                     self.errorHandler!(ShrimpError.createError(code,localizedDescription: "JSON serialization error"))
                                 }
