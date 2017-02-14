@@ -29,7 +29,7 @@ public class DownloadRequest:NSObject,URLSessionDownloadDelegate {
         self.url = url
         self.destPath = destPath
 
-        FileManager.checkDic(withPath: self.destPath)
+        if FileManager.checkDic(withPath: self.destPath){}
         
         resumeDownload(url: url, destPath: destPath)
     }
@@ -177,7 +177,7 @@ public class DownloadRequest:NSObject,URLSessionDownloadDelegate {
     }
     
     private func downloadCancel(){
-        saveResumeData(url:self.url,resumeData: self.resumeData)
+        if saveResumeData(url:self.url,resumeData: self.resumeData) {}
         
         self.downloadTask = nil
         DownloadManager.requestDic[url] = nil

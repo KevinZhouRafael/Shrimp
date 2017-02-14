@@ -7,25 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C7A9EA9EDFD38B0FB63FBDA2 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28A3D4EA34474486216247E9 /* Pods_Example.framework */; };
-		CF15EA591E519FDF001F9DD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF15EA581E519FDF001F9DD5 /* AppDelegate.swift */; };
-		CF15EA5B1E519FDF001F9DD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF15EA5A1E519FDF001F9DD5 /* ViewController.swift */; };
-		CF15EA5E1E519FDF001F9DD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF15EA5C1E519FDF001F9DD5 /* Main.storyboard */; };
-		CF15EA601E519FDF001F9DD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF15EA5F1E519FDF001F9DD5 /* Assets.xcassets */; };
-		CF15EA631E519FDF001F9DD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF15EA611E519FDF001F9DD5 /* LaunchScreen.storyboard */; };
+		CF4F1E171E52F09B00BF264F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4F1E0F1E52F09B00BF264F /* LaunchScreen.storyboard */; };
+		CF4F1E181E52F09B00BF264F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4F1E111E52F09B00BF264F /* Main.storyboard */; };
+		CF4F1E191E52F09B00BF264F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4F1E131E52F09B00BF264F /* AppDelegate.swift */; };
+		CF4F1E1A1E52F09B00BF264F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF4F1E141E52F09B00BF264F /* Info.plist */; };
+		CF4F1E1B1E52F09B00BF264F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4F1E151E52F09B00BF264F /* ViewController.swift */; };
+		CF4F1E1C1E52F09B00BF264F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF4F1E161E52F09B00BF264F /* Assets.xcassets */; };
+		D15501ADEC0C310EF5CFE5BF /* Pods_ShrimpExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE827AF050646F5CF70AC98C /* Pods_ShrimpExample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		28A3D4EA34474486216247E9 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3434D4369F734DB1DE8D5AC5 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		9DEDF819189FA81AA8B5A75D /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
-		CF15EA551E519FDF001F9DD5 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF15EA581E519FDF001F9DD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF15EA5A1E519FDF001F9DD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CF15EA5D1E519FDF001F9DD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CF15EA5F1E519FDF001F9DD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CF15EA621E519FDF001F9DD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CF15EA641E519FDF001F9DD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		640344E1D9E7E66577AB7B55 /* Pods-ShrimpExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShrimpExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShrimpExample/Pods-ShrimpExample.debug.xcconfig"; sourceTree = "<group>"; };
+		AB481C0DCAA7AA00C9FFA23C /* Pods-ShrimpExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShrimpExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShrimpExample/Pods-ShrimpExample.release.xcconfig"; sourceTree = "<group>"; };
+		BE827AF050646F5CF70AC98C /* Pods_ShrimpExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShrimpExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF15EA551E519FDF001F9DD5 /* ShrimpExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShrimpExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF4F1E101E52F09B00BF264F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CF4F1E121E52F09B00BF264F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		CF4F1E131E52F09B00BF264F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ShrimpExample/AppDelegate.swift; sourceTree = "<group>"; };
+		CF4F1E141E52F09B00BF264F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ShrimpExample/Info.plist; sourceTree = "<group>"; };
+		CF4F1E151E52F09B00BF264F /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ShrimpExample/ViewController.swift; sourceTree = "<group>"; };
+		CF4F1E161E52F09B00BF264F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ShrimpExample/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7A9EA9EDFD38B0FB63FBDA2 /* Pods_Example.framework in Frameworks */,
+				D15501ADEC0C310EF5CFE5BF /* Pods_ShrimpExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +44,7 @@
 		683A1451A24B460FA811BC5F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				28A3D4EA34474486216247E9 /* Pods_Example.framework */,
+				BE827AF050646F5CF70AC98C /* Pods_ShrimpExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -51,8 +52,8 @@
 		973DAD97752CAA8D34DF008D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3434D4369F734DB1DE8D5AC5 /* Pods-Example.debug.xcconfig */,
-				9DEDF819189FA81AA8B5A75D /* Pods-Example.release.xcconfig */,
+                640344E1D9E7E66577AB7B55 /* Pods-ShrimpExample.debug.xcconfig */,
+				AB481C0DCAA7AA00C9FFA23C /* Pods-ShrimpExample.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -60,7 +61,7 @@
 		CF15EA4C1E519FDF001F9DD5 = {
 			isa = PBXGroup;
 			children = (
-				CF15EA571E519FDF001F9DD5 /* Example */,
+				CF4F1E0D1E52F08000BF264F /* ShrimpExample */,
 				CF15EA561E519FDF001F9DD5 /* Products */,
 				973DAD97752CAA8D34DF008D /* Pods */,
 				683A1451A24B460FA811BC5F /* Frameworks */,
@@ -70,45 +71,45 @@
 		CF15EA561E519FDF001F9DD5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CF15EA551E519FDF001F9DD5 /* Example.app */,
+				CF15EA551E519FDF001F9DD5 /* ShrimpExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CF15EA571E519FDF001F9DD5 /* Example */ = {
+		CF4F1E0D1E52F08000BF264F /* ShrimpExample */ = {
 			isa = PBXGroup;
 			children = (
-				CF15EA581E519FDF001F9DD5 /* AppDelegate.swift */,
-				CF15EA5A1E519FDF001F9DD5 /* ViewController.swift */,
-				CF15EA5C1E519FDF001F9DD5 /* Main.storyboard */,
-				CF15EA5F1E519FDF001F9DD5 /* Assets.xcassets */,
-				CF15EA611E519FDF001F9DD5 /* LaunchScreen.storyboard */,
-				CF15EA641E519FDF001F9DD5 /* Info.plist */,
+				CF4F1E0F1E52F09B00BF264F /* LaunchScreen.storyboard */,
+				CF4F1E111E52F09B00BF264F /* Main.storyboard */,
+				CF4F1E131E52F09B00BF264F /* AppDelegate.swift */,
+				CF4F1E141E52F09B00BF264F /* Info.plist */,
+				CF4F1E151E52F09B00BF264F /* ViewController.swift */,
+				CF4F1E161E52F09B00BF264F /* Assets.xcassets */,
 			);
-			path = Example;
+			name = ShrimpExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CF15EA541E519FDF001F9DD5 /* Example */ = {
+		CF15EA541E519FDF001F9DD5 /* ShrimpExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CF15EA671E519FDF001F9DD5 /* Build configuration list for PBXNativeTarget "Example" */;
+			buildConfigurationList = CF15EA671E519FDF001F9DD5 /* Build configuration list for PBXNativeTarget "ShrimpExample" */;
 			buildPhases = (
-				07CBBB5216E91CEDE6A16614 /* [CP] Check Pods Manifest.lock */,
+				4D94C8B37098994293EB5EC8 /* [CP] Check Pods Manifest.lock */,
 				CF15EA511E519FDF001F9DD5 /* Sources */,
 				CF15EA521E519FDF001F9DD5 /* Frameworks */,
 				CF15EA531E519FDF001F9DD5 /* Resources */,
-				42DBFCB31F1412CD96AF2416 /* [CP] Embed Pods Frameworks */,
-				0F4DF37A3F4AA6FA04A326EB /* [CP] Copy Pods Resources */,
+				27D671352F94F43E90A4B091 /* [CP] Embed Pods Frameworks */,
+				7BB3F6A857E4B9461750EB37 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Example;
+			name = ShrimpExample;
 			productName = Example;
-			productReference = CF15EA551E519FDF001F9DD5 /* Example.app */;
+			productReference = CF15EA551E519FDF001F9DD5 /* ShrimpExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -128,7 +129,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CF15EA501E519FDF001F9DD5 /* Build configuration list for PBXProject "Example" */;
+			buildConfigurationList = CF15EA501E519FDF001F9DD5 /* Build configuration list for PBXProject "ShrimpExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -141,7 +142,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CF15EA541E519FDF001F9DD5 /* Example */,
+				CF15EA541E519FDF001F9DD5 /* ShrimpExample */,
 			);
 		};
 /* End PBXProject section */
@@ -151,16 +152,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF15EA631E519FDF001F9DD5 /* LaunchScreen.storyboard in Resources */,
-				CF15EA601E519FDF001F9DD5 /* Assets.xcassets in Resources */,
-				CF15EA5E1E519FDF001F9DD5 /* Main.storyboard in Resources */,
+				CF4F1E181E52F09B00BF264F /* Main.storyboard in Resources */,
+				CF4F1E1A1E52F09B00BF264F /* Info.plist in Resources */,
+				CF4F1E171E52F09B00BF264F /* LaunchScreen.storyboard in Resources */,
+				CF4F1E1C1E52F09B00BF264F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07CBBB5216E91CEDE6A16614 /* [CP] Check Pods Manifest.lock */ = {
+		27D671352F94F43E90A4B091 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShrimpExample/Pods-ShrimpExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D94C8B37098994293EB5EC8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -175,7 +192,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		0F4DF37A3F4AA6FA04A326EB /* [CP] Copy Pods Resources */ = {
+		7BB3F6A857E4B9461750EB37 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -187,22 +204,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		42DBFCB31F1412CD96AF2416 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShrimpExample/Pods-ShrimpExample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -212,28 +214,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF15EA5B1E519FDF001F9DD5 /* ViewController.swift in Sources */,
-				CF15EA591E519FDF001F9DD5 /* AppDelegate.swift in Sources */,
+				CF4F1E191E52F09B00BF264F /* AppDelegate.swift in Sources */,
+				CF4F1E1B1E52F09B00BF264F /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CF15EA5C1E519FDF001F9DD5 /* Main.storyboard */ = {
+		CF4F1E0F1E52F09B00BF264F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CF15EA5D1E519FDF001F9DD5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CF15EA611E519FDF001F9DD5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CF15EA621E519FDF001F9DD5 /* Base */,
+				CF4F1E101E52F09B00BF264F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ShrimpExample/Base.lproj;
+			sourceTree = "<group>";
+		};
+		CF4F1E111E52F09B00BF264F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF4F1E121E52F09B00BF264F /* Base */,
+			);
+			name = Main.storyboard;
+			path = ShrimpExample/Base.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -334,12 +338,12 @@
 		};
 		CF15EA681E519FDF001F9DD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3434D4369F734DB1DE8D5AC5 /* Pods-Example.debug.xcconfig */;
+			baseConfigurationReference = 640344E1D9E7E66577AB7B55 /* Pods-ShrimpExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3NV79J62JR;
-				INFOPLIST_FILE = Example/Info.plist;
+				INFOPLIST_FILE = ShrimpExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.heregins.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -349,12 +353,12 @@
 		};
 		CF15EA691E519FDF001F9DD5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9DEDF819189FA81AA8B5A75D /* Pods-Example.release.xcconfig */;
+			baseConfigurationReference = AB481C0DCAA7AA00C9FFA23C /* Pods-ShrimpExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3NV79J62JR;
-				INFOPLIST_FILE = Example/Info.plist;
+				INFOPLIST_FILE = ShrimpExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.heregins.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -365,7 +369,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CF15EA501E519FDF001F9DD5 /* Build configuration list for PBXProject "Example" */ = {
+		CF15EA501E519FDF001F9DD5 /* Build configuration list for PBXProject "ShrimpExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF15EA651E519FDF001F9DD5 /* Debug */,
@@ -374,7 +378,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CF15EA671E519FDF001F9DD5 /* Build configuration list for PBXNativeTarget "Example" */ = {
+		CF15EA671E519FDF001F9DD5 /* Build configuration list for PBXNativeTarget "ShrimpExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CF15EA681E519FDF001F9DD5 /* Debug */,

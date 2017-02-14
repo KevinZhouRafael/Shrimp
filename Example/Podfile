@@ -1,6 +1,6 @@
 use_frameworks!
 
-target 'Example' do
+target ‘ShrimpExample' do
   pod 'Shrimp’, :path => '../'
 
 end
