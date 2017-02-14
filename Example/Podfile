@@ -1,11 +1,6 @@
 use_frameworks!
 
-target 'ShrimpHttp_Example' do
-  pod 'ShrimpHttp', :path => '../'
+target 'Example' do
+  pod 'ShrimpHttp’, :path => '../'
 
-  target 'ShrimpHttp_Tests' do
-    inherit! :search_paths
-
-    pod 'FBSnapshotTestCase'
-  end
 end

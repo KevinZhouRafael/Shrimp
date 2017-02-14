@@ -8,7 +8,6 @@
 
 import UIKit
 import ShrimpHttp
-import SwiftyJSON
 
 class ViewController: UIViewController {
 
@@ -27,9 +26,12 @@ class ViewController: UIViewController {
     func getFunction(){
     
 
-        ShrimpRequest().request(.GET, urlString: "https://httpbin.org/get").responseString ({ (string, response) in
-            debugPrint("GET: \(string)")
+        ShrimpRequest().request(.GET, urlString: "http://httpbin.org/get").responseString({ (result, response) in
+            debugPrint("GET: \(result)")
+        }, errorHandler: { (error) in
+            
         })
+
         
     }
     
@@ -42,10 +44,9 @@ class ViewController: UIViewController {
         ShrimpRequest().request(.POST, urlString: "http://www.mocky.io/v2/56c5b7a80f0000d027a204e2", parameters: params)
             .responseJSONObject({ (json, response) in
             
-                let dic = json as! [String:AnyObject]
+                let dic = json as! [String:String]
                 debugPrint(dic["first_name"])
                 debugPrint(dic["last_name"])
-                debugPrint(json["gender"])
                 
             }) { (error) in
                 

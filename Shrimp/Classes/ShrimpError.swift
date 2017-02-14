@@ -12,22 +12,22 @@ public struct ShrimpError {
     
     
     public enum Code: Int {
-        case InputStreamReadFailed           = -6000
-        case OutputStreamWriteFailed         = -6001
-        case ContentTypeValidationFailed     = -6002
-        case StatusCodeValidationFailed      = -6003
-        case DataSerializationFailed         = -6004
-        case StringSerializationFailed       = -6005
-        case JSONSerializationFailed         = -6006
-        case PropertyListSerializationFailed = -6007
+        case inputStreamReadFailed           = -6000
+        case outputStreamWriteFailed         = -6001
+        case contentTypeValidationFailed     = -6002
+        case statusCodeValidationFailed      = -6003
+        case dataSerializationFailed         = -6004
+        case stringSerializationFailed       = -6005
+        case jsonSerializationFailed         = -6006
+        case propertyListSerializationFailed = -6007
     }
     
-    public static func createError(code: Int) -> NSError {
+    public static func createError(_ code: Int) -> NSError {
         let text = HttpStatusCode(statusCode: code).statusDescription
         return NSError(domain: Domain, code: code, userInfo: [NSLocalizedDescriptionKey: text,NSLocalizedFailureReasonErrorKey:text])
     }
     
-    public static func createError(code: Int, localizedDescription:String?) -> NSError {
+    public static func createError(_ code: Int, localizedDescription:String?) -> NSError {
         if localizedDescription == nil {
             return createError(code)
         }else{

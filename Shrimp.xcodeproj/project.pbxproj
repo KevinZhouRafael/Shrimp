@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF15EB6D1E51C89E001F9DD5 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF15EB681E51C627001F9DD5 /* CryptoSwift.framework */; };
+		CF2217C71E091DB90090A975 /* Shrimp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2217BD1E091DB80090A975 /* Shrimp.framework */; };
+		CF2217CC1E091DB90090A975 /* ShrimpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2217CB1E091DB90090A975 /* ShrimpTests.swift */; };
+		CF2217CE1E091DB90090A975 /* Shrimp.h in Headers */ = {isa = PBXBuildFile; fileRef = CF2217C01E091DB80090A975 /* Shrimp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF2217DC1E091E270090A975 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2217D81E091E270090A975 /* ContentType.swift */; };
+		CF2217DD1E091E270090A975 /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2217D91E091E270090A975 /* HttpStatusCode.swift */; };
+		CF2217DE1E091E270090A975 /* ShrimpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2217DA1E091E270090A975 /* ShrimpError.swift */; };
+		CF2217DF1E091E270090A975 /* ShrimpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2217DB1E091E270090A975 /* ShrimpRequest.swift */; };
+		CFE45B291E0A1BA700149659 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE45B271E0A1BA700149659 /* DownloadManager.swift */; };
+		CFE45B2A1E0A1BA700149659 /* DownloadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE45B281E0A1BA700149659 /* DownloadRequest.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF15EB671E51C627001F9DD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF15EB621E51C627001F9DD5 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 754BE45519693E190098E6F3;
+			remoteInfo = CryptoSwift;
+		};
+		CF15EB691E51C627001F9DD5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF15EB621E51C627001F9DD5 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 754BE46019693E190098E6F3;
+			remoteInfo = Tests;
+		};
+		CF2217C81E091DB90090A975 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF2217B41E091DB80090A975 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF2217BC1E091DB80090A975;
+			remoteInfo = Shrimp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CFEA642B1E0D397000408D62 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CF15EB621E51C627001F9DD5 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = Carthage/Checkouts/CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
+		CF2217BD1E091DB80090A975 /* Shrimp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shrimp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF2217C01E091DB80090A975 /* Shrimp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shrimp.h; sourceTree = "<group>"; };
+		CF2217C11E091DB80090A975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF2217C61E091DB90090A975 /* ShrimpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShrimpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF2217CB1E091DB90090A975 /* ShrimpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrimpTests.swift; sourceTree = "<group>"; };
+		CF2217CD1E091DB90090A975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF2217D81E091E270090A975 /* ContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
+		CF2217D91E091E270090A975 /* HttpStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
+		CF2217DA1E091E270090A975 /* ShrimpError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShrimpError.swift; sourceTree = "<group>"; };
+		CF2217DB1E091E270090A975 /* ShrimpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShrimpRequest.swift; sourceTree = "<group>"; };
+		CFE45B271E0A1BA700149659 /* DownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		CFE45B281E0A1BA700149659 /* DownloadRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadRequest.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF2217B91E091DB80090A975 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF15EB6D1E51C89E001F9DD5 /* CryptoSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF2217C31E091DB90090A975 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF2217C71E091DB90090A975 /* Shrimp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF15EB631E51C627001F9DD5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF15EB681E51C627001F9DD5 /* CryptoSwift.framework */,
+				CF15EB6A1E51C627001F9DD5 /* Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF2217B31E091DB80090A975 = {
+			isa = PBXGroup;
+			children = (
+				CF15EB621E51C627001F9DD5 /* CryptoSwift.xcodeproj */,
+				CF2217BF1E091DB80090A975 /* Shrimp */,
+				CF2217CA1E091DB90090A975 /* ShrimpTests */,
+				CF2217BE1E091DB80090A975 /* Products */,
+				CF6A5E2A1E0BADA8003BCC2E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CF2217BE1E091DB80090A975 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF2217BD1E091DB80090A975 /* Shrimp.framework */,
+				CF2217C61E091DB90090A975 /* ShrimpTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF2217BF1E091DB80090A975 /* Shrimp */ = {
+			isa = PBXGroup;
+			children = (
+				CF2217C01E091DB80090A975 /* Shrimp.h */,
+				CF2217C11E091DB80090A975 /* Info.plist */,
+				CF2217D71E091E270090A975 /* Classes */,
+			);
+			path = Shrimp;
+			sourceTree = "<group>";
+		};
+		CF2217CA1E091DB90090A975 /* ShrimpTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF2217CB1E091DB90090A975 /* ShrimpTests.swift */,
+				CF2217CD1E091DB90090A975 /* Info.plist */,
+			);
+			path = ShrimpTests;
+			sourceTree = "<group>";
+		};
+		CF2217D71E091E270090A975 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CFE45B271E0A1BA700149659 /* DownloadManager.swift */,
+				CFE45B281E0A1BA700149659 /* DownloadRequest.swift */,
+				CF2217D81E091E270090A975 /* ContentType.swift */,
+				CF2217D91E091E270090A975 /* HttpStatusCode.swift */,
+				CF2217DA1E091E270090A975 /* ShrimpError.swift */,
+				CF2217DB1E091E270090A975 /* ShrimpRequest.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		CF6A5E2A1E0BADA8003BCC2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CF2217BA1E091DB80090A975 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF2217CE1E091DB90090A975 /* Shrimp.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CF2217BC1E091DB80090A975 /* Shrimp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF2217D11E091DB90090A975 /* Build configuration list for PBXNativeTarget "Shrimp" */;
+			buildPhases = (
+				CF2217B81E091DB80090A975 /* Sources */,
+				CF2217B91E091DB80090A975 /* Frameworks */,
+				CF2217BA1E091DB80090A975 /* Headers */,
+				CF2217BB1E091DB80090A975 /* Resources */,
+				CFEA642B1E0D397000408D62 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Shrimp;
+			productName = Shrimp;
+			productReference = CF2217BD1E091DB80090A975 /* Shrimp.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CF2217C51E091DB90090A975 /* ShrimpTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF2217D41E091DB90090A975 /* Build configuration list for PBXNativeTarget "ShrimpTests" */;
+			buildPhases = (
+				CF2217C21E091DB90090A975 /* Sources */,
+				CF2217C31E091DB90090A975 /* Frameworks */,
+				CF2217C41E091DB90090A975 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF2217C91E091DB90090A975 /* PBXTargetDependency */,
+			);
+			name = ShrimpTests;
+			productName = ShrimpTests;
+			productReference = CF2217C61E091DB90090A975 /* ShrimpTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF2217B41E091DB80090A975 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "kai zhou";
+				TargetAttributes = {
+					CF2217BC1E091DB80090A975 = {
+						CreatedOnToolsVersion = 8.2;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					CF2217C51E091DB90090A975 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = CF2217B71E091DB80090A975 /* Build configuration list for PBXProject "Shrimp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF2217B31E091DB80090A975;
+			productRefGroup = CF2217BE1E091DB80090A975 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CF15EB631E51C627001F9DD5 /* Products */;
+					ProjectRef = CF15EB621E51C627001F9DD5 /* CryptoSwift.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				CF2217BC1E091DB80090A975 /* Shrimp */,
+				CF2217C51E091DB90090A975 /* ShrimpTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CF15EB681E51C627001F9DD5 /* CryptoSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CryptoSwift.framework;
+			remoteRef = CF15EB671E51C627001F9DD5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CF15EB6A1E51C627001F9DD5 /* Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Tests.xctest;
+			remoteRef = CF15EB691E51C627001F9DD5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF2217BB1E091DB80090A975 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF2217C41E091DB90090A975 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF2217B81E091DB80090A975 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF2217DD1E091E270090A975 /* HttpStatusCode.swift in Sources */,
+				CFE45B2A1E0A1BA700149659 /* DownloadRequest.swift in Sources */,
+				CFE45B291E0A1BA700149659 /* DownloadManager.swift in Sources */,
+				CF2217DE1E091E270090A975 /* ShrimpError.swift in Sources */,
+				CF2217DF1E091E270090A975 /* ShrimpRequest.swift in Sources */,
+				CF2217DC1E091E270090A975 /* ContentType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF2217C21E091DB90090A975 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF2217CC1E091DB90090A975 /* ShrimpTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF2217C91E091DB90090A975 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF2217BC1E091DB80090A975 /* Shrimp */;
+			targetProxy = CF2217C81E091DB90090A975 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CF2217CF1E091DB90090A975 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_INCLUDE_PATHS = "";
+				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "${SRCROOT}/Cocoapods/iphoneos";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "${SRCROOT}/Cocoapods/iphonesimulator";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CF2217D01E091DB90090A975 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/Cocoapods/iphoneos";
+				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "${SRCROOT}/Cocoapods/iphoneos";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "${SRCROOT}/Cocoapods/iphonesimulator";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CF2217D21E091DB90090A975 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Shrimp/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.heregins.Shrimp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		CF2217D31E091DB90090A975 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = Shrimp/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.heregins.Shrimp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		CF2217D51E091DB90090A975 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = ShrimpTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.heregins.ShrimpTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		CF2217D61E091DB90090A975 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = ShrimpTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.heregins.ShrimpTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF2217B71E091DB80090A975 /* Build configuration list for PBXProject "Shrimp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF2217CF1E091DB90090A975 /* Debug */,
+				CF2217D01E091DB90090A975 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF2217D11E091DB90090A975 /* Build configuration list for PBXNativeTarget "Shrimp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF2217D21E091DB90090A975 /* Debug */,
+				CF2217D31E091DB90090A975 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF2217D41E091DB90090A975 /* Build configuration list for PBXNativeTarget "ShrimpTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF2217D51E091DB90090A975 /* Debug */,
+				CF2217D61E091DB90090A975 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF2217B41E091DB80090A975 /* Project object */;
+}

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ShrimpHttp'
-  s.version          = '0.1.1'
+  s.version          = '0.2.0'
   s.summary          = 'ShrimpHttp is an simplify HTTP networking library.'
 
 # This description is used to generate tags and improve search results.
@@ -30,13 +30,14 @@ ShrimpHttp is an simplify HTTP networking library written in Swift.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'ShrimpHttp/Classes/**/*'
-  
+  s.source_files = 'Shrimp/Classes/**/*'
+
   # s.resource_bundles = {
   #   'ShrimpHttp' => ['ShrimpHttp/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'SwiftyJSON', '~> 2.4.0'
+
+  s.dependency 'CryptoSwift', '~> 0.6.7'
 end
