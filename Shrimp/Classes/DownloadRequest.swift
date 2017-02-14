@@ -111,7 +111,10 @@ public class DownloadRequest:NSObject,URLSessionDownloadDelegate {
             NotificationCenter.default.post(name:NSNotification.Name(rawValue:Noti_DownloadManager_Progress),
                                     object: nil,
                                     userInfo: ["url":self.url,
-                                            "progress":Float(Double(totalBytesWritten)/Double(totalBytesExpectedToWrite))])
+                                               "progress":Float(Double(totalBytesWritten)/Double(totalBytesExpectedToWrite)),"bytesWritten":bytesWritten,
+                                               "totalBytesWritten":totalBytesWritten,
+                                               "totalBytesExpectedToWrite":totalBytesExpectedToWrite]
+                            )
         }
         
     }
