@@ -115,7 +115,7 @@ func downloadComplete(noti:Notification) {
 
 ## Installation
 
-###Cocoapods
+### Cocoapods
 
 Shrimp is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
@@ -124,7 +124,7 @@ it, simply add the following line to your Podfile:
 pod "Shrimp"
 ```
 
-###Carthage
+### Carthage
 
 If you're using Carthage you can add a dependency on Shrimp by adding it to your Cartfile:
 
