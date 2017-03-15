@@ -117,6 +117,7 @@ func downloadComplete(noti:Notification) {
 ## Installation
 
 ###Cocoapods
+
 Shrimp is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
