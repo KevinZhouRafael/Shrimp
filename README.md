@@ -126,7 +126,7 @@ pod "Shrimp"
 
 ### Carthage
 
-If you're using Carthage you can add a dependency on Shrimp by adding it to your Cartfile:
+If you're using [Carthage](https://github.com/Carthage/Carthage), you can add a dependency on Shrimp by adding it to your Cartfile:
 
 ```ruby
 github "KevinChouRafael/Shrimp"
@@ -134,7 +134,12 @@ github "KevinChouRafael/Shrimp"
 
 ## Author
 
-rafael zhou, wumingapie@gmail.com
+Rafael Zhou
+
+- Email me: <wumingapie@gmail.com>
+- Follow me on **Twitter**: [**@wumingapie**](https://twitter.com/wumingapie)
+- Contact me on **Facebook**: [**wumingapie**](https://www.facebook.com/wumingapie)
+- Contact me on **LinkedIn**: [**Rafael**](https://www.linkedin.com/in/rafael-zhou-7230943a/)
 
 ## License
 
