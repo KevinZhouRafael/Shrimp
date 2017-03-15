@@ -1,10 +1,9 @@
 # Shrimp
 
-[![CI Status](http://img.shields.io/travis/rafael zhou/ShrimpHttp.svg?style=flat)](https://travis-ci.org/rafael zhou/ShrimpHttp)
-[![Version](https://img.shields.io/cocoapods/v/ShrimpHttp.svg?style=flat)](http://cocoapods.org/pods/ShrimpHttp)
+[![Version](https://img.shields.io/cocoapods/v/Shrimp.svg?style=flat)](http://cocoapods.org/pods/Shrimp)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![License](https://img.shields.io/cocoapods/l/ShrimpHttp.svg?style=flat)](http://cocoapods.org/pods/ShrimpHttp)
-[![Platform](https://img.shields.io/cocoapods/p/ShrimpHttp.svg?style=flat)](http://cocoapods.org/pods/ShrimpHttp)
+[![License](https://img.shields.io/cocoapods/l/Shrimp.svg?style=flat)](http://cocoapods.org/pods/Shrimp)
+[![Platform](https://img.shields.io/cocoapods/p/Shrimp.svg?style=flat)](http://cocoapods.org/pods/Shrimp)
 
 
 Shrimp is an simplify HTTP networking library written in Swift.
@@ -127,7 +126,7 @@ pod "Shrimp"
 
 ###Carthage
 
-If you're using Carthage you can add a dependency on ObjectMapper by adding it to your Cartfile:
+If you're using Carthage you can add a dependency on Shrimp by adding it to your Cartfile:
 
 ```ruby
 github "KevinChouRafael/Shrimp"
