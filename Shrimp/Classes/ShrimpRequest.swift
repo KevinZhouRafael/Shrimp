@@ -166,6 +166,8 @@ open class ShrimpRequest {
         
         task = session.dataTask(with: urlRequest as URLRequest, completionHandler: { (data, response, error) in
             
+
+            
             if error == nil{
                 let httpResponse = response as! HTTPURLResponse
                 let code = httpResponse.statusCode
@@ -176,8 +178,8 @@ open class ShrimpRequest {
                     
                     let resultString = String(data: data!, encoding: String.Encoding.utf8)
                     
-                    debugPrint("***ShrimpRequest-- Request URL --> \( response!.url!.absoluteString) \n Result -> \(resultString)")
-                    
+
+                    debugPrint("***ShrimpRequest-- Request URL --> \( response!.url!.absoluteString) \n Error -> \(error?.localizedDescription) \n Result -> \(resultString)")
                     
                     DispatchQueue.main.async {
                         if self.responseDataHandler != nil {
@@ -201,9 +203,11 @@ open class ShrimpRequest {
 
                     
                 } else {
-                        
+                    
                     let httpResponse = response as! HTTPURLResponse
                     let code = httpResponse.statusCode
+                    
+                    debugPrint("***ShrimpRequest-- Request URL --> \( response!.url!.absoluteString) \n ErrorCode -> \(code) \n")
                     
                     //TODO 错误处理
                     if let msg = httpResponse.allHeaderFields["Status"] as? String{
@@ -227,6 +231,8 @@ open class ShrimpRequest {
                 }
                     
             }else{
+                debugPrint("***ShrimpRequest-- Request URL --> \(response?.url?.absoluteString) \n Error -> \(error?.localizedDescription) \n")
+                
                 DispatchQueue.main.async {
                     if self.errorHandler != nil {
                         self.errorHandler!(error!)

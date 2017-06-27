@@ -129,7 +129,7 @@ pod "Shrimp"
 If you're using [Carthage](https://github.com/Carthage/Carthage), you can add a dependency on Shrimp by adding it to your Cartfile:
 
 ```ruby
-github "KevinChouRafael/Shrimp"
+github "KevinZhouRafael/Shrimp"
 ```
 
 ## Author
