@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 Shrimp is an simplify HTTP networking library written in Swift.
                        DESC
 
-  s.homepage         = 'https://github.com/KevinChouRafael/Shrimp'
+  s.homepage         = 'https://github.com/KevinZhouRafael/Shrimp'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'rafael zhou' => 'wumingapie@gmail.com' }
-  s.source           = { :git => 'https://github.com/KevinChouRafael/Shrimp.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/KevinZhouRafael/Shrimp.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
