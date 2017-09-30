@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF15EB6D1E51C89E001F9DD5 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF15EB681E51C627001F9DD5 /* CryptoSwift.framework */; };
+		56883A2F1F7E30430004FEB8 /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56883A2E1F7E30430004FEB8 /* HttpStatusCode.swift */; };
+		56883A3A1F7E32220004FEB8 /* ShrimpConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56883A391F7E32220004FEB8 /* ShrimpConfigure.swift */; };
 		CF2217C71E091DB90090A975 /* Shrimp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2217BD1E091DB80090A975 /* Shrimp.framework */; };
 		CF2217CC1E091DB90090A975 /* ShrimpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2217CB1E091DB90090A975 /* ShrimpTests.swift */; };
 		CF2217CE1E091DB90090A975 /* Shrimp.h in Headers */ = {isa = PBXBuildFile; fileRef = CF2217C01E091DB80090A975 /* Shrimp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF2217DC1E091E270090A975 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2217D81E091E270090A975 /* ContentType.swift */; };
-		CF2217DD1E091E270090A975 /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2217D91E091E270090A975 /* HttpStatusCode.swift */; };
 		CF2217DE1E091E270090A975 /* ShrimpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2217DA1E091E270090A975 /* ShrimpError.swift */; };
 		CF2217DF1E091E270090A975 /* ShrimpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2217DB1E091E270090A975 /* ShrimpRequest.swift */; };
 		CFE45B291E0A1BA700149659 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE45B271E0A1BA700149659 /* DownloadManager.swift */; };
@@ -20,20 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CF15EB671E51C627001F9DD5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CF15EB621E51C627001F9DD5 /* CryptoSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 754BE45519693E190098E6F3;
-			remoteInfo = CryptoSwift;
-		};
-		CF15EB691E51C627001F9DD5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CF15EB621E51C627001F9DD5 /* CryptoSwift.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 754BE46019693E190098E6F3;
-			remoteInfo = Tests;
-		};
 		CF2217C81E091DB90090A975 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CF2217B41E091DB80090A975 /* Project object */;
@@ -56,7 +42,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CF15EB621E51C627001F9DD5 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = Carthage/Checkouts/CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
+		56883A2E1F7E30430004FEB8 /* HttpStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
+		56883A391F7E32220004FEB8 /* ShrimpConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrimpConfigure.swift; sourceTree = "<group>"; };
 		CF2217BD1E091DB80090A975 /* Shrimp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shrimp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2217C01E091DB80090A975 /* Shrimp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shrimp.h; sourceTree = "<group>"; };
 		CF2217C11E091DB80090A975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,7 +51,6 @@
 		CF2217CB1E091DB90090A975 /* ShrimpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrimpTests.swift; sourceTree = "<group>"; };
 		CF2217CD1E091DB90090A975 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF2217D81E091E270090A975 /* ContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
-		CF2217D91E091E270090A975 /* HttpStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
 		CF2217DA1E091E270090A975 /* ShrimpError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShrimpError.swift; sourceTree = "<group>"; };
 		CF2217DB1E091E270090A975 /* ShrimpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShrimpRequest.swift; sourceTree = "<group>"; };
 		CFE45B271E0A1BA700149659 /* DownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
@@ -76,7 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF15EB6D1E51C89E001F9DD5 /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,19 +76,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CF15EB631E51C627001F9DD5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CF15EB681E51C627001F9DD5 /* CryptoSwift.framework */,
-				CF15EB6A1E51C627001F9DD5 /* Tests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		CF2217B31E091DB80090A975 = {
 			isa = PBXGroup;
 			children = (
-				CF15EB621E51C627001F9DD5 /* CryptoSwift.xcodeproj */,
 				CF2217BF1E091DB80090A975 /* Shrimp */,
 				CF2217CA1E091DB90090A975 /* ShrimpTests */,
 				CF2217BE1E091DB80090A975 /* Products */,
@@ -142,12 +117,13 @@
 		CF2217D71E091E270090A975 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				56883A2E1F7E30430004FEB8 /* HttpStatusCode.swift */,
 				CFE45B271E0A1BA700149659 /* DownloadManager.swift */,
 				CFE45B281E0A1BA700149659 /* DownloadRequest.swift */,
 				CF2217D81E091E270090A975 /* ContentType.swift */,
-				CF2217D91E091E270090A975 /* HttpStatusCode.swift */,
 				CF2217DA1E091E270090A975 /* ShrimpError.swift */,
 				CF2217DB1E091E270090A975 /* ShrimpRequest.swift */,
+				56883A391F7E32220004FEB8 /* ShrimpConfigure.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -217,7 +193,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "kai zhou";
 				TargetAttributes = {
 					CF2217BC1E091DB80090A975 = {
@@ -241,12 +217,6 @@
 			mainGroup = CF2217B31E091DB80090A975;
 			productRefGroup = CF2217BE1E091DB80090A975 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = CF15EB631E51C627001F9DD5 /* Products */;
-					ProjectRef = CF15EB621E51C627001F9DD5 /* CryptoSwift.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				CF2217BC1E091DB80090A975 /* Shrimp */,
@@ -254,23 +224,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		CF15EB681E51C627001F9DD5 /* CryptoSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CryptoSwift.framework;
-			remoteRef = CF15EB671E51C627001F9DD5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CF15EB6A1E51C627001F9DD5 /* Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = Tests.xctest;
-			remoteRef = CF15EB691E51C627001F9DD5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CF2217BB1E091DB80090A975 /* Resources */ = {
@@ -294,11 +247,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF2217DD1E091E270090A975 /* HttpStatusCode.swift in Sources */,
 				CFE45B2A1E0A1BA700149659 /* DownloadRequest.swift in Sources */,
 				CFE45B291E0A1BA700149659 /* DownloadManager.swift in Sources */,
+				56883A3A1F7E32220004FEB8 /* ShrimpConfigure.swift in Sources */,
 				CF2217DE1E091E270090A975 /* ShrimpError.swift in Sources */,
 				CF2217DF1E091E270090A975 /* ShrimpRequest.swift in Sources */,
+				56883A2F1F7E30430004FEB8 /* HttpStatusCode.swift in Sources */,
 				CF2217DC1E091E270090A975 /* ContentType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,7 +285,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -339,7 +295,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -369,9 +329,8 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_INCLUDE_PATHS = "";
-				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "${SRCROOT}/Cocoapods/iphoneos";
-				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "${SRCROOT}/Cocoapods/iphonesimulator";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -387,7 +346,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -395,7 +356,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -416,10 +381,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_INCLUDE_PATHS = "${SRCROOT}/Cocoapods/iphoneos";
-				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "${SRCROOT}/Cocoapods/iphoneos";
-				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "${SRCROOT}/Cocoapods/iphonesimulator";
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -436,10 +400,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Shrimp/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -462,10 +423,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Shrimp/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

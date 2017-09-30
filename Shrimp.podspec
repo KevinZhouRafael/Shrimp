@@ -39,5 +39,5 @@ Shrimp is an simplify HTTP networking library written in Swift.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
 
-  s.dependency 'CryptoSwift', '~> 0.6.7'
+  s.dependency 'CryptoSwift', '~> 0.7.0'
 end

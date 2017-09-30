@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import CryptoSwift
 
 public enum Method: String {
     case GET, POST, PUT, DELETE
@@ -120,10 +119,12 @@ func getResumtDataPath(url:String)->String{
     //supportPath
     let supportURL = try! FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
 
-    let urlMD5 = url.md5()
+//    let urlMD5 = url.md5()
+    let key =  ShrimpConfigure.shared.urlToKey(url: url)
     
+
     //dataPath
-    let dataURL = supportURL.appendingPathComponent(urlMD5, isDirectory: false)
+    let dataURL = supportURL.appendingPathComponent(url, isDirectory: false)
     
     return dataURL.path
     
