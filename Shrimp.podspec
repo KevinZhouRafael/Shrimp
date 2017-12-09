@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Shrimp'
-  s.version          = '0.2.1'
+  s.version          = '0.2.2'
   s.summary          = 'Shrimp is an simplify HTTP networking library.'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Shrimp is an simplify HTTP networking library written in Swift.
   s.source           = { :git => 'https://github.com/KevinZhouRafael/Shrimp.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'Shrimp/Classes/**/*'
 
@@ -39,5 +39,5 @@ Shrimp is an simplify HTTP networking library written in Swift.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
 
-  s.dependency 'CryptoSwift', '~> 0.7.0'
+  #s.dependency 'CryptoSwift', '~> 0.7.0'
 end

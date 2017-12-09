@@ -121,7 +121,11 @@ Shrimp is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
+# swift4 ,ios 10.0+
 pod "Shrimp"
+
+#swift3, ios 8.0+
+pod "Shrimp", '== 0.2.1'
 ```
 
 ### Carthage
