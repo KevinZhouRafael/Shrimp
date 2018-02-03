@@ -20,6 +20,7 @@ public struct ShrimpError {
         case stringSerializationFailed       = -6005
         case jsonSerializationFailed         = -6006
         case propertyListSerializationFailed = -6007
+        case responseDecodingFailed            = -6008
     }
     
     public static func createError(_ code: Int) -> NSError {

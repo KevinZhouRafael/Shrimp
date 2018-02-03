@@ -166,18 +166,14 @@ open class ShrimpRequest {
         
         task = session.dataTask(with: urlRequest as URLRequest, completionHandler: { (data, response, error) in
             
-
-            
             if error == nil{
                 let httpResponse = response as! HTTPURLResponse
                 let code = httpResponse.statusCode
                 
-                let acceptableStatusCodes: CountableRange<Int> = 200..<300
-                if acceptableStatusCodes.contains(httpResponse.statusCode) {
-                    
-                    
+//                let acceptableStatusCodes: CountableRange<Int> = 200..<300
+//                if acceptableStatusCodes.contains(httpResponse.statusCode) {
+                
                     let resultString = String(data: data!, encoding: String.Encoding.utf8)
-                    
 
                     debugPrint("***ShrimpRequest-- Request URL --> \( response!.url!.absoluteString) \n Error -> \(error?.localizedDescription) \n Result -> \(resultString)")
                     
@@ -200,36 +196,32 @@ open class ShrimpRequest {
                         }
                         
                     }
-
-                    
-                } else {
-                    
-                    let httpResponse = response as! HTTPURLResponse
-                    let code = httpResponse.statusCode
-                    
-                    debugPrint("***ShrimpRequest-- Request URL --> \( response!.url!.absoluteString) \n ErrorCode -> \(code) \n")
-                    
-                    //TODO 错误处理
-                    if let msg = httpResponse.allHeaderFields["Status"] as? String{
-                        DispatchQueue.main.async {
-                            
-                            if self.errorHandler != nil {
-                                self.errorHandler!(ShrimpError.createError(code,localizedDescription: msg))
-                            }
-                        }
-                    }else{
-                        DispatchQueue.main.async {
-                            
-                            if self.errorHandler != nil {
-                                self.errorHandler!(ShrimpError.createError(code,localizedDescription: ""))
-                            }
-                        }
-                    }
-                        
-                    
-
-                }
-                    
+  
+                    //狀態碼錯誤
+//                } else {
+//
+//                    let httpResponse = response as! HTTPURLResponse
+//                    let code = httpResponse.statusCode
+//
+//                    debugPrint("***ShrimpRequest-- Request URL --> \( response!.url!.absoluteString) \n ErrorCode -> \(code) \n")
+//
+//                    // TODO: 错误处理
+//                    if let msg = httpResponse.allHeaderFields["Status"] as? String{
+//                        DispatchQueue.main.async {
+//
+//                            if self.errorHandler != nil {
+//                                self.errorHandler!(ShrimpError.createError(code,localizedDescription: msg))
+//                            }
+//                        }
+//                    }else{
+//                        DispatchQueue.main.async {
+//
+//                            if self.errorHandler != nil {
+//                                self.errorHandler!(ShrimpError.createError(code))
+//                            }
+//                        }
+//                    }
+//                }
             }else{
                 debugPrint("***ShrimpRequest-- Request URL --> \(response?.url?.absoluteString) \n Error -> \(error?.localizedDescription) \n")
                 
@@ -239,21 +231,6 @@ open class ShrimpRequest {
                     }
                 }
                 
-                //                if error!.domain == NSURLErrorDomain && error!.code == NSURLErrorNotConnectedToInternet {
-                //
-                //                    dispatch_async(dispatch_get_main_queue()) {
-                //                        if self.errorHandler != nil {
-                //                            self.errorHandler!(error: error!)
-                //                        }
-                //                    }
-                //                }else{
-                //
-                //                    dispatch_async(dispatch_get_main_queue()) {
-                //                        if self.errorHandler != nil {
-                //                            self.errorHandler!(error: error!)
-                //                        }
-                //                    }
-                //                }
                 
             }
             

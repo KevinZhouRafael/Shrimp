@@ -15,6 +15,7 @@
 		CF2217DC1E091E270090A975 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2217D81E091E270090A975 /* ContentType.swift */; };
 		CF2217DE1E091E270090A975 /* ShrimpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2217DA1E091E270090A975 /* ShrimpError.swift */; };
 		CF2217DF1E091E270090A975 /* ShrimpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2217DB1E091E270090A975 /* ShrimpRequest.swift */; };
+		CF9ED6E7201C4A1B009982B4 /* ShrimpRequest+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9ED6E6201C4A1B009982B4 /* ShrimpRequest+Codable.swift */; };
 		CFE45B291E0A1BA700149659 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE45B271E0A1BA700149659 /* DownloadManager.swift */; };
 		CFE45B2A1E0A1BA700149659 /* DownloadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE45B281E0A1BA700149659 /* DownloadRequest.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +54,7 @@
 		CF2217D81E091E270090A975 /* ContentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		CF2217DA1E091E270090A975 /* ShrimpError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShrimpError.swift; sourceTree = "<group>"; };
 		CF2217DB1E091E270090A975 /* ShrimpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShrimpRequest.swift; sourceTree = "<group>"; };
+		CF9ED6E6201C4A1B009982B4 /* ShrimpRequest+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShrimpRequest+Codable.swift"; sourceTree = "<group>"; };
 		CFE45B271E0A1BA700149659 /* DownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		CFE45B281E0A1BA700149659 /* DownloadRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +126,7 @@
 				CF2217DA1E091E270090A975 /* ShrimpError.swift */,
 				CF2217DB1E091E270090A975 /* ShrimpRequest.swift */,
 				56883A391F7E32220004FEB8 /* ShrimpConfigure.swift */,
+				CF9ED6E6201C4A1B009982B4 /* ShrimpRequest+Codable.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				56883A3A1F7E32220004FEB8 /* ShrimpConfigure.swift in Sources */,
 				CF2217DE1E091E270090A975 /* ShrimpError.swift in Sources */,
 				CF2217DF1E091E270090A975 /* ShrimpRequest.swift in Sources */,
+				CF9ED6E7201C4A1B009982B4 /* ShrimpRequest+Codable.swift in Sources */,
 				56883A2F1F7E30430004FEB8 /* HttpStatusCode.swift in Sources */,
 				CF2217DC1E091E270090A975 /* ContentType.swift in Sources */,
 			);
