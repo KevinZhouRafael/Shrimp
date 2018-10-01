@@ -1,9 +1,9 @@
 //
 //  HttpStatusCode.swift
-//  ShrimpHttp
+//  Shrimp
 //
 //  Created by rafael on 7/19/16.
-//  Copyright © 2016 Rafael. All rights reserved.
+//  Copyright © 2016 Kevin Zhou. All rights reserved.
 //
 
 import Foundation

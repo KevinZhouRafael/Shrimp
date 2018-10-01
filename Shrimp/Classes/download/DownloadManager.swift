@@ -71,3 +71,78 @@ public class DownloadManager:NSObject {
 }
 
 
+
+//MARK: utils
+//resumeData relate
+func getResumtDataPath(url:String)->String{
+    
+    //supportPath
+    let supportURL = try! FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+    
+    //    let urlMD5 = url.md5()
+    let key =  ShrimpConfigure.shared.urlToKey(url: url)
+    
+    
+    //dataPath
+    let dataURL = supportURL.appendingPathComponent(url, isDirectory: false)
+    
+    return dataURL.path
+    
+}
+func hasResumeDataPath(url:String)->Bool{
+    return FileManager.default.fileExists(atPath: getResumtDataPath(url:url))
+}
+
+func removeResumeData(url:String){
+    
+    let dataPath = getResumtDataPath(url: url)
+    if FileManager.default.fileExists(atPath: dataPath){
+        do{
+            try FileManager.default.removeItem(atPath: dataPath)
+        }catch{
+            
+        }
+    }
+}
+
+func saveResumeData(url:String,resumeData:Data?)->Bool{
+    guard resumeData != nil else {
+        return false
+    }
+    let resumeDataPath = getResumtDataPath(url: url)
+    let resumeDataURL = URL(fileURLWithPath:resumeDataPath)
+    
+    do{
+        
+        try resumeData!.write(to: resumeDataURL, options: .atomic)
+        
+        return true
+    }catch let e {
+        debugPrint(e)
+        return false
+    }
+}
+
+extension FileManager {
+    
+    static func checkDic(withPath dicPath:String) -> Bool {
+        var isDir:ObjCBool = false
+        let exists = FileManager.default.fileExists(atPath: dicPath, isDirectory: &isDir)
+        if exists && isDir.boolValue {
+            return true
+        }else{
+            do{
+                try FileManager.default.createDirectory(at:URL(fileURLWithPath: dicPath, isDirectory: true), withIntermediateDirectories: true, attributes: nil)
+            }catch{
+                return false
+            }
+            return true
+        }
+    }
+    
+    static func checkFile(withPath filePath:String){
+        if !FileManager.default.fileExists(atPath: filePath) {
+            FileManager.default.createFile(atPath: filePath, contents: nil, attributes: nil)
+        }
+    }
+}

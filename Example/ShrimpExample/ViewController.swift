@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     func getFunction(){
     
 
-        ShrimpRequest().request(.GET, urlString: "http://httpbin.org/get").responseString({ (result, response) in
+        Shrimp.request(.GET, urlString: "http://httpbin.org/get").responseString({ (result, response) in
             debugPrint("GET: \(result)")
         }, errorHandler: { (error) in
             
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
             "username":"rafael",
             "password":"123456"]
         
-        ShrimpRequest().request(.POST, urlString: "http://www.mocky.io/v2/56c5b7a80f0000d027a204e2", parameters: params)
+        Shrimp.request(.POST, urlString: "http://www.mocky.io/v2/56c5b7a80f0000d027a204e2", parameters: params)
             .responseJSONObject({ (json, response) in
             
                 let dic = json as! [String:String]

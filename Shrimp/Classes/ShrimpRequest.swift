@@ -1,6 +1,6 @@
 //
 //  ShrimpRequest.swift
-//  ShrimpHttp
+//  Shrimp
 //
 //  Created by Rafael on 12/28/15.
 //  Copyright © 2015 Rafael. All rights reserved.
@@ -121,6 +121,8 @@ open class ShrimpRequest {
 
         
     }
+    
+    @discardableResult
     public func responseData(_ responseHandler:@escaping (_ data:Data,_ response:URLResponse)->Void,errorHandler:(@escaping (_ error:Error)->Void))->ShrimpRequest{
         
         self.responseDataHandler = responseHandler
@@ -130,6 +132,8 @@ open class ShrimpRequest {
         
         return self
     }
+    
+    @discardableResult
     public func responseData(_ responseHandler:@escaping (_ data:Data,_ response:URLResponse)->Void,errorHandler:((_ error:Error)->Void)? = nil)->ShrimpRequest{
         
         self.responseDataHandler = responseHandler
@@ -140,6 +144,7 @@ open class ShrimpRequest {
         return self
     }
 
+    @discardableResult
     public func responseString(_ responseHandler:@escaping (_ string:String,_ response:URLResponse)->Void,errorHandler:@escaping (_ error:Error)->Void)->ShrimpRequest{
         
         self.responseStringHandler = responseHandler
@@ -150,6 +155,7 @@ open class ShrimpRequest {
         return self
     }
     
+    @discardableResult
     public func responseJSONObject(_ responseHandler:@escaping (_ json:Any,_ response:URLResponse)->Void,errorHandler:@escaping (_ error:Error)->Void)->ShrimpRequest{
         
         self.responseJSONObjectHandler = responseHandler
@@ -346,3 +352,106 @@ open class ShrimpRequest {
 }
 
 
+//MARK: Utils
+
+public enum Method: String {
+    case GET, POST, PUT, DELETE
+}
+
+public enum ContentType: String{
+    case UrlEncoded = "application/x-www-form-urlencoded; charset=utf-8"
+    
+    case JSON = "application/json; charset=utf-8"
+    
+    //    case MultiPartFromData : "",
+}
+
+//let boundary = "Boundary+\(arc4random())\(arc4random())"
+//headerDic["Content-Type"] = "multipart/form-data; boundary=\(boundary)"
+//
+//
+//let charset = CFStringConvertEncodingToIANACharSetName(CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding))
+//headerDic["Content-Type"] = "application/x-www-form-urlencoded; charset=\(charset)"
+
+extension Dictionary {
+    
+    /// Build string representation of HTTP parameter dictionary of keys and objects
+    ///
+    /// This percent escapes in compliance with RFC 3986
+    ///
+    /// http://www.ietf.org/rfc/rfc3986.txt
+    ///
+    /// :returns: String representation in the form of key1=value1&key2=value2 where the keys and values are percent escaped
+    
+    func stringFromHttpParameters() -> String {
+        let parameterArray = self.map { (key, value) -> String in
+            let percentEscapedKey = (key as! String).stringByAddingPercentEncodingForURLQueryValue()!
+            let percentEscapedValue = (value as! String).stringByAddingPercentEncodingForURLQueryValue()!
+            return "\(percentEscapedKey)=\(percentEscapedValue)"
+        }
+        
+        return parameterArray.joined(separator: "&")
+    }
+    
+}
+
+extension String{
+    //urlstring
+    /// Percent escapes values to be added to a URL query as specified in RFC 3986
+    ///
+    /// This percent-escapes all characters besides the alphanumeric character set and "-", ".", "_", and "~".
+    ///
+    /// http://www.ietf.org/rfc/rfc3986.txt
+    ///
+    /// :returns: Returns percent-escaped string.
+    
+    func stringByAddingPercentEncodingForURLQueryValue() -> String? {
+        //        let allowedCharacters = NSCharacterSet(charactersInString: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._~")
+        //        return self.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacters)
+        
+        return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+    }
+}
+
+extension NSNumber {
+    var isBool: Bool { return CFBooleanGetTypeID() == CFGetTypeID(self) }
+}
+
+//extension String{
+//    //from wei wang
+//    var MD5: String {
+//        let cString = self.cString(using: String.Encoding.utf8)
+//        let length = CUnsignedInt(
+//            self.lengthOfBytes(using: String.Encoding.utf8)
+//        )
+//        let result = UnsafeMutablePointer<CUnsignedChar>.allocate(
+//            capacity: Int(CC_MD5_DIGEST_LENGTH)
+//        )
+//
+//        CC_MD5(cString!, length, result)
+//
+//        return String(format:
+//            "%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
+//                      result[0], result[1], result[2], result[3],
+//                      result[4], result[5], result[6], result[7],
+//                      result[8], result[9], result[10], result[11],
+//                      result[12], result[13], result[14], result[15])
+//    }
+//
+//    func md5() -> String {
+//
+//        let context = UnsafeMutablePointer<CC_MD5_CTX>.allocate(capacity: 1)
+//        var digest = Array<UInt8>(repeating:0, count:Int(CC_MD5_DIGEST_LENGTH))
+//        CC_MD5_Init(context)
+//        CC_MD5_Update(context, self, CC_LONG(self.lengthOfBytes(using: String.Encoding.utf8)))
+//        CC_MD5_Final(&digest, context)
+//        context.deallocate(capacity: 1)
+//        var hexString = ""
+//        for byte in digest {
+//            hexString += String(format:"%02x", byte)
+//        }
+//
+//        return hexString
+//    }
+//
+//}

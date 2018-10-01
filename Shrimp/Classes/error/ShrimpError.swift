@@ -1,6 +1,6 @@
 //
 //  ShrimpError.swift
-//  ShrimpHttp
+//  Shrimp
 //
 //  Created by rafael on 7/19/16.
 //  Copyright © 2016 Rafael. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 public struct ShrimpError {
-    public static let Domain = "com.shrimphttp.error"
+    public static let Domain = "com.Shrimp.error"
     
     
     public enum Code: Int {

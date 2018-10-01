@@ -29,7 +29,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ### GET
 
 ```swift
-        ShrimpRequest().request(.GET, urlString: "https://httpbin.org/get")
+        Shrimp.request(.GET, urlString: "https://httpbin.org/get")
         .responseString ({ (string, response) in
             debugPrint("GET: \(string)")
         })
@@ -39,7 +39,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ```swift
 
-        ShrimpRequest().request(.POST, urlString: "http://www.mocky.io/v2/56c5b7a80f0000d027a204e2", parameters: ["username":"rafael",
+        Shrimp.request(.POST, urlString: "http://www.mocky.io/v2/56c5b7a80f0000d027a204e2", parameters: ["username":"rafael",
             "password":"123456"])
         .responseJSONObject({ (json, response) in
                 debugPrint(json["first_name"])
