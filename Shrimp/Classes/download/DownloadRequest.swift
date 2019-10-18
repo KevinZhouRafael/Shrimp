@@ -155,7 +155,7 @@ public class DownloadRequest:NSObject,URLSessionDownloadDelegate {
         //after cancel
         if let nserror = error as? NSError {
             
-            debugPrint("error:\(error)")
+            debugPrint("error:\(String(describing: error))")
             
             if nserror.code == -999 && nserror.localizedDescription == "cancelled" {
                 
@@ -173,7 +173,7 @@ public class DownloadRequest:NSObject,URLSessionDownloadDelegate {
         
     }
     public func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
-        debugPrint("error:\(error)")
+        debugPrint("error:\(String(describing: error))")
     }
     
     private func downloadCancel(){

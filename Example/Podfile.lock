@@ -1,6 +1,6 @@
 PODS:
-  - ReachabilitySwift (4.2.1)
-  - Shrimp (0.2.3):
+  - ReachabilitySwift (4.3.1)
+  - Shrimp (0.3.0):
     - ReachabilitySwift
 
 DEPENDENCIES:
@@ -15,9 +15,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ReachabilitySwift: 35720ffea59c1c76d15f885be77fd33e33985427
-  Shrimp: 57be2fefba1d0e9d099b270fea46765913c89ab4
+  ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
+  Shrimp: e7040103032214e00f9496167e444ea1ceb6c8dd
 
 PODFILE CHECKSUM: 8fbf6ab186cf041cd862e2260158b48d8ea6c290
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.2

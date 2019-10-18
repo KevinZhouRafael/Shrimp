@@ -181,7 +181,7 @@ open class ShrimpRequest {
                 
                     let resultString = String(data: data!, encoding: String.Encoding.utf8)
 
-                    debugPrint("***ShrimpRequest-- Request URL --> \( response!.url!.absoluteString) \n Error -> \(error?.localizedDescription) \n Result -> \(resultString)")
+                debugPrint("***ShrimpRequest-- Request URL --> \( response!.url!.absoluteString) \n Error -> \(error?.localizedDescription) \n Result -> \(String(describing: resultString))")
                     
                     DispatchQueue.main.async {
                         if self.responseDataHandler != nil {

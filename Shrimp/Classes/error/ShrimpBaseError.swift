@@ -28,12 +28,12 @@ public enum ShrimpBaseError: Error {
 // MARK: - Error Booleans
 
 public extension ShrimpBaseError {
-    public var isNetworkError:Bool{
+    var isNetworkError:Bool{
         if case .networkError = self { return true}
         return false
     }
     
-    public var isGlobalError:Bool{
+    var isGlobalError:Bool{
         if case .globalError = self {return true}
         return false
     }
@@ -57,7 +57,7 @@ extension ShrimpBaseError: LocalizedError {
 }
 
 public extension ShrimpBaseError.NetworkErrorReason {
-    public var localizedDescription: String {
+    var localizedDescription: String {
         switch self {
         case .noNetwork:
             return "No Network"
@@ -68,7 +68,7 @@ public extension ShrimpBaseError.NetworkErrorReason {
 }
 
 public extension ShrimpBaseError.GlobaleErrorReason {
-    public var localizedDescription: String {
+    var localizedDescription: String {
         switch self {
         case .noData:
             return "No response data"

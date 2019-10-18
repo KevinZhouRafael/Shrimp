@@ -9,7 +9,7 @@
 import Foundation
 public extension ShrimpRequest{
     @discardableResult
-    public func responseCodable<T:Codable>(_ responseHandler:@escaping (_ result:T,_ response:URLResponse)->Void,
+    func responseCodable<T:Codable>(_ responseHandler:@escaping (_ result:T,_ response:URLResponse)->Void,
                                            errorHandler:((_ error:Error)->Void)?)->ShrimpRequest{
 
             return responseString({ (resultString, urlResponse) in
