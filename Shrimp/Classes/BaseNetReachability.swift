@@ -10,7 +10,7 @@ import Foundation
 import Reachability
 
 public class BaseNetReachability{
-    static let reachability = Reachability()!
+    private static let reachability = try! Reachability()
     public static func startMonitor(){
         reachability.whenReachable = { reachability in
             if reachability.connection == .wifi {
@@ -35,7 +35,7 @@ public class BaseNetReachability{
     }
     
     public static func isReachability() -> Bool{
-        return reachability.connection != .none
+        return reachability.connection != .unavailable
     }
     
     public static func isWIFI() -> Bool{

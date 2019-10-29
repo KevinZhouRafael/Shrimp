@@ -15,6 +15,8 @@ public class ShrimpConfigure {
     
     public weak var delegate:URLToKeyProtocol?
 
+    public var HOST:String = ""
+    
     public func urlToKey(url:String) -> String {
         if delegate != nil{
             return delegate!.urlToKey(url: url)
@@ -22,5 +24,30 @@ public class ShrimpConfigure {
             return url
         }
     }
+}
+
+
+public class ShrimpNetURL{
+    //eg:
+    //let LOGIN:KCNetApi = "/api/account/login"
+}
+
+open class ShrimpNetApi:NSObject,ExpressibleByStringLiteral{
+    
+    let api: String
+    
+    public typealias StringLiteralType = String
+    required public init(stringLiteral value: ShrimpNetApi.StringLiteralType) {
+        self.api = value
+    }
+
+    public var path: String{
+        return HOST + api
+    }
+
+    open var HOST:String{
+        return ShrimpConfigure.shared.HOST
+    }
+    
 }
 

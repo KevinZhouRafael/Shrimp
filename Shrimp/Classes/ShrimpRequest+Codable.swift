@@ -9,8 +9,8 @@
 import Foundation
 public extension ShrimpRequest{
     @discardableResult
-    func responseCodable<T:Codable>(_ responseHandler:@escaping (_ result:T,_ response:URLResponse)->Void,
-                                           errorHandler:((_ error:Error)->Void)?)->ShrimpRequest{
+    func responseCodable<T:Codable>(_ responseHandler:@escaping (_ result:T,_ response:URLResponse?)->Void,
+                                           errorHandler:((_ error:Error?)->Void)?)->ShrimpRequest{
 
             return responseString({ (resultString, urlResponse) in
                 
@@ -21,7 +21,8 @@ public extension ShrimpRequest{
                     responseHandler(responseResult,urlResponse)
                     
                 }catch {
-                    errorHandler?(ShrimpError.createError(ShrimpError.Code.responseDecodingFailed.rawValue, localizedDescription: "相应解析错误"))
+                    debugPrint("\(error)")
+                    errorHandler?(ShrimpError.createError(ShrimpError.Code.responseDecodingFailed.rawValue, localizedDescription: "响应解析错误。\(error.localizedDescription)"))
                     
                 }
                 

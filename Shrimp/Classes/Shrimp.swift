@@ -10,6 +10,15 @@ import Foundation
 
 public func request(
         _ method: Method,
+        api: ShrimpNetApi,
+        parameters: [String: Any]? = nil,
+        headers: [String: String]? = nil)
+        -> ShrimpRequest{
+            return ShrimpRequest().request(method, api: api, parameters: parameters, headers: headers)
+}
+
+public func request(
+        _ method: Method,
         urlString: String,
         parameters: [String: Any]? = nil,
         headers: [String: String]? = nil)

@@ -16,13 +16,29 @@ open class ShrimpRequest {
     fileprivate var responseDataHandler:((_ data:Data,_ response:URLResponse)->Void)?
     fileprivate var responseStringHandler:((_ string:String,_ response:URLResponse)->Void)?
     fileprivate var responseJSONObjectHandler:((_ json:Any,_ response:URLResponse)->Void)?
-    fileprivate var errorHandler:((_ error:Error)->Void)?
+    fileprivate var errorHandler:((_ error:Error?)->Void)?
     
     var contentType = ContentType.UrlEncoded
     
     
     public init(){
         
+    }
+    
+    open func request(
+                _ method: Method,
+                api: ShrimpNetApi,
+                parameters: [String: Any]? = nil,
+                headers: [String: String]? = nil)
+        -> ShrimpRequest
+    {
+        
+        
+        buildURL(method, urlString: api.path,parameters: parameters)
+        buildHeader(method, headers: headers)
+        buildParameters(method, parameters: parameters)
+        
+        return self
     }
     
     open func request(
@@ -123,7 +139,7 @@ open class ShrimpRequest {
     }
     
     @discardableResult
-    public func responseData(_ responseHandler:@escaping (_ data:Data,_ response:URLResponse)->Void,errorHandler:(@escaping (_ error:Error)->Void))->ShrimpRequest{
+    public func responseData(_ responseHandler:@escaping (_ data:Data,_ response:URLResponse?)->Void,errorHandler:(@escaping (_ error:Error?)->Void))->ShrimpRequest{
         
         self.responseDataHandler = responseHandler
         self.errorHandler = errorHandler
@@ -134,7 +150,7 @@ open class ShrimpRequest {
     }
     
     @discardableResult
-    public func responseData(_ responseHandler:@escaping (_ data:Data,_ response:URLResponse)->Void,errorHandler:((_ error:Error)->Void)? = nil)->ShrimpRequest{
+    public func responseData(_ responseHandler:@escaping (_ data:Data?,_ response:URLResponse?)->Void,errorHandler:((_ error:Error?)->Void)? = nil)->ShrimpRequest{
         
         self.responseDataHandler = responseHandler
         self.errorHandler = errorHandler
@@ -145,7 +161,7 @@ open class ShrimpRequest {
     }
 
     @discardableResult
-    public func responseString(_ responseHandler:@escaping (_ string:String,_ response:URLResponse)->Void,errorHandler:@escaping (_ error:Error)->Void)->ShrimpRequest{
+    public func responseString(_ responseHandler:@escaping (_ string:String,_ response:URLResponse?)->Void,errorHandler:@escaping (_ error:Error?)->Void)->ShrimpRequest{
         
         self.responseStringHandler = responseHandler
         self.errorHandler = errorHandler
@@ -156,7 +172,7 @@ open class ShrimpRequest {
     }
     
     @discardableResult
-    public func responseJSONObject(_ responseHandler:@escaping (_ json:Any,_ response:URLResponse)->Void,errorHandler:@escaping (_ error:Error)->Void)->ShrimpRequest{
+    public func responseJSONObject(_ responseHandler:@escaping (_ json:Any,_ response:URLResponse?)->Void,errorHandler:@escaping (_ error:Error?)->Void)->ShrimpRequest{
         
         self.responseJSONObjectHandler = responseHandler
         self.errorHandler = errorHandler
@@ -172,73 +188,71 @@ open class ShrimpRequest {
         
         task = session.dataTask(with: urlRequest as URLRequest, completionHandler: { (data, response, error) in
             
-            if error == nil{
-                let httpResponse = response as! HTTPURLResponse
-                let code = httpResponse.statusCode
+            //guard error
+            //guard data,response
+            guard error == nil else{
+                debugPrint("***ShrimpRequest-- Request URL --> \(String(describing: response?.url?.absoluteString)) \n Error -> \(error!.localizedDescription) \n")
+                DispatchQueue.main.async {
+                    self.errorHandler?(error)
+                }
+                return
+            }
+            
+            guard let data = data, let response = response, let httpResponse = response as? HTTPURLResponse else{
                 
-//                let acceptableStatusCodes: CountableRange<Int> = 200..<300
-//                if acceptableStatusCodes.contains(httpResponse.statusCode) {
+                debugPrint("***ShrimpRequest-- no response and data. \n")
+                DispatchQueue.main.async {
+                    self.errorHandler?(error)
+                }
+                return
+            }
+            
+            let code = httpResponse.statusCode
+            let resultString = String(data: data, encoding: String.Encoding.utf8)
                 
-                    let resultString = String(data: data!, encoding: String.Encoding.utf8)
-
-                debugPrint("***ShrimpRequest-- Request URL --> \( response!.url!.absoluteString) \n Error -> \(error?.localizedDescription) \n Result -> \(String(describing: resultString))")
+            let acceptableStatusCodes: CountableRange<Int> = 200..<300
+            if acceptableStatusCodes.contains(httpResponse.statusCode) {
+                
+                debugPrint("***ShrimpRequest-- Request URL --> \( String(describing: httpResponse.url?.absoluteString)) \n Result -> \(String(describing: resultString))")
                     
-                    DispatchQueue.main.async {
-                        if self.responseDataHandler != nil {
-                            self.responseDataHandler!(data!,response!)
-                        }else if self.responseStringHandler != nil {
-                            self.responseStringHandler!(resultString!,response!)
-                        }else if self.responseJSONObjectHandler != nil {
-                            do {
-                                let object: Any = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
-                                self.responseJSONObjectHandler!(object,response!)
-                                
-                            } catch {
-                                if self.errorHandler != nil {
-                                    self.errorHandler!(ShrimpError.createError(code,localizedDescription: "JSON serialization error"))
-                                }
-                            }
+                DispatchQueue.main.async {
+                    if self.responseDataHandler != nil {
+                        self.responseDataHandler!(data,response)
+                    }else if self.responseStringHandler != nil {
+                        self.responseStringHandler!(resultString ?? "",response)
+                    }else if self.responseJSONObjectHandler != nil {
+                        do {
+                            let object: Any = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                            self.responseJSONObjectHandler!(object,response)
                             
+                        } catch {
+                            debugPrint("***ShrimpRequet-- Error -> ß\(error)")
+                            self.errorHandler?(ShrimpError.createError(code,localizedDescription: "JSON serialization error"))
                         }
                         
                     }
-  
-                    //狀態碼錯誤
-//                } else {
-//
-//                    let httpResponse = response as! HTTPURLResponse
-//                    let code = httpResponse.statusCode
-//
-//                    debugPrint("***ShrimpRequest-- Request URL --> \( response!.url!.absoluteString) \n ErrorCode -> \(code) \n")
-//
-//                    // TODO: 错误处理
-//                    if let msg = httpResponse.allHeaderFields["Status"] as? String{
-//                        DispatchQueue.main.async {
-//
-//                            if self.errorHandler != nil {
-//                                self.errorHandler!(ShrimpError.createError(code,localizedDescription: msg))
-//                            }
-//                        }
-//                    }else{
-//                        DispatchQueue.main.async {
-//
-//                            if self.errorHandler != nil {
-//                                self.errorHandler!(ShrimpError.createError(code))
-//                            }
-//                        }
-//                    }
-//                }
-            }else{
-                debugPrint("***ShrimpRequest-- Request URL --> \(response?.url?.absoluteString) \n Error -> \(error?.localizedDescription) \n")
-                
-                DispatchQueue.main.async {
-                    if self.errorHandler != nil {
-                        self.errorHandler!(error!)
+                    
+                }
+
+                //狀態碼錯誤
+            } else {
+                debugPrint("***ShrimpRequest-- Request URL --> \( httpResponse.url?.absoluteString) \n data -> \(resultString) \n ErrorCode -> \(code) \n")
+
+                if let msg = resultString {
+                    DispatchQueue.main.async {
+                        self.errorHandler?(ShrimpError.createError(code,localizedDescription: msg))
+                    }
+                }else if let msg = httpResponse.allHeaderFields["Status"] as? String{
+                    DispatchQueue.main.async {
+                        self.errorHandler?(ShrimpError.createError(code,localizedDescription: msg))
+                    }
+                }else{
+                    DispatchQueue.main.async {
+                        self.errorHandler?(ShrimpError.createError(code))
                     }
                 }
-                
-                
             }
+            
             
         })
         
