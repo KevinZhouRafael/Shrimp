@@ -7,6 +7,20 @@
 //
 
 import Foundation
+
+extension NSError{
+    public static let ShrimpDomain = "com.Shrimp.error"
+    
+    convenience init(httpStatusCode code:Int, localizedDescription:String? = nil) {
+        if let desc = localizedDescription{
+            self.init(domain: NSError.ShrimpDomain, code: code, userInfo: [NSLocalizedDescriptionKey: desc,NSLocalizedFailureReasonErrorKey:desc])
+        }else{
+            let desc = HttpStatusCode(statusCode: code).statusDescription
+            self.init(domain: NSError.ShrimpDomain, code: code, userInfo: [NSLocalizedDescriptionKey: desc,NSLocalizedFailureReasonErrorKey:desc])
+        }
+        
+    }
+}
 public struct ShrimpError {
     public static let Domain = "com.Shrimp.error"
     

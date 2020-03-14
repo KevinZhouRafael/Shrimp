@@ -16,6 +16,10 @@ public class ShrimpConfigure {
     public weak var delegate:URLToKeyProtocol?
 
     public var HOST:String = ""
+//    public var keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys
+    
+    public var DefaultGetContentType = ContentType.UrlEncoded
+    public var DefaultPostContentType = ContentType.JSON
     
     public func urlToKey(url:String) -> String {
         if delegate != nil{

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AD83146241CE1F700FC60D6 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD83145241CE1F700FC60D6 /* HttpError.swift */; };
 		56883A2F1F7E30430004FEB8 /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56883A2E1F7E30430004FEB8 /* HttpStatusCode.swift */; };
 		56883A3A1F7E32220004FEB8 /* ShrimpConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56883A391F7E32220004FEB8 /* ShrimpConfigure.swift */; };
 		CF2217C71E091DB90090A975 /* Shrimp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2217BD1E091DB80090A975 /* Shrimp.framework */; };
@@ -46,6 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0AD83145241CE1F700FC60D6 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		56883A2E1F7E30430004FEB8 /* HttpStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
 		56883A391F7E32220004FEB8 /* ShrimpConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShrimpConfigure.swift; sourceTree = "<group>"; };
 		CF2217BD1E091DB80090A975 /* Shrimp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shrimp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 				CF7B0ED3212515CF00F691FE /* ShrimpBaseError.swift */,
 				56883A2E1F7E30430004FEB8 /* HttpStatusCode.swift */,
 				CF2217DA1E091E270090A975 /* ShrimpError.swift */,
+				0AD83145241CE1F700FC60D6 /* HttpError.swift */,
 			);
 			path = error;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				CF7B0ED6212515CF00F691FE /* BaseNetReachability.swift in Sources */,
 				CFCB7B27215F8D2200B9E3FA /* Shrimp.swift in Sources */,
 				CF7B0ED5212515CF00F691FE /* ShrimpBaseError.swift in Sources */,
+				0AD83146241CE1F700FC60D6 /* HttpError.swift in Sources */,
 				CF2217DF1E091E270090A975 /* ShrimpRequest.swift in Sources */,
 				CF9ED6E7201C4A1B009982B4 /* ShrimpRequest+Codable.swift in Sources */,
 				56883A2F1F7E30430004FEB8 /* HttpStatusCode.swift in Sources */,

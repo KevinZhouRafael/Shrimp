@@ -18,7 +18,8 @@ open class ShrimpRequest {
     fileprivate var responseJSONObjectHandler:((_ json:Any,_ response:URLResponse)->Void)?
     fileprivate var errorHandler:((_ error:Error?)->Void)?
     
-    var contentType = ContentType.UrlEncoded
+    //Saved ContentType:  ContentType parameters > headers params > defaultContentType
+    fileprivate var contentType:ContentType!
     
     
     public init(){
@@ -28,14 +29,13 @@ open class ShrimpRequest {
     open func request(
                 _ method: Method,
                 api: ShrimpNetApi,
+                contentType:ContentType? = nil,
                 parameters: [String: Any]? = nil,
                 headers: [String: String]? = nil)
         -> ShrimpRequest
     {
-        
-        
         buildURL(method, urlString: api.path,parameters: parameters)
-        buildHeader(method, headers: headers)
+        buildHeader(method, headers: headers,contentType: contentType)
         buildParameters(method, parameters: parameters)
         
         return self
@@ -44,14 +44,13 @@ open class ShrimpRequest {
     open func request(
                 _ method: Method,
                 urlString: String,
+                contentType:ContentType? = nil,
                 parameters: [String: Any]? = nil,
                 headers: [String: String]? = nil)
         -> ShrimpRequest
     {
-        
-        
         buildURL(method, urlString: urlString,parameters: parameters)
-        buildHeader(method, headers: headers)
+        buildHeader(method, headers: headers,contentType: contentType)
         buildParameters(method, parameters: parameters)
         
         return self
@@ -64,8 +63,19 @@ open class ShrimpRequest {
         if parameters != nil {
             switch method {
             case .GET:
-                requestURL = URL(string:"\(urlString)?\(query(parameters!))")!
+//                requestURL = URL(string:"\(urlString)?\(query(parameters!))")!s
 
+                var components = URLComponents(string: urlString)!
+                components.queryItems = [URLQueryItem]()
+                for (key, value) in parameters ?? [:] {
+                    let queryItem = URLQueryItem(name: key, value: "\(value)")
+                    components.queryItems!.append(queryItem)
+                }
+                
+                components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+                
+                requestURL = components.url!
+                
                 break
             case .POST, .PUT, .DELETE:
                 
@@ -77,20 +87,19 @@ open class ShrimpRequest {
         urlRequest!.httpMethod = method.rawValue
     }
     
-    fileprivate func buildHeader(_ method:Method,headers: [String: String]? = nil){
+    fileprivate func buildHeader(_ method:Method,headers: [String: String]? = nil,contentType:ContentType? = nil){
         //header
         var headerDic = [String:String]()
 
         switch method {
         case .GET:
+            headerDic["Content-Type"] = ShrimpConfigure.shared.DefaultGetContentType.rawValue
             break
         case .POST, .PUT, .DELETE:
+            headerDic["Content-Type"] = ShrimpConfigure.shared.DefaultPostContentType.rawValue
             break
             
         }
-        
-        headerDic["Content-Type"] = contentType.rawValue
-        
         
         if headers != nil {
             for (key,value) in headers! {
@@ -98,6 +107,11 @@ open class ShrimpRequest {
             }
         }
         
+        if let ctype = contentType{
+            headerDic["Content-Type"] = ctype.rawValue
+        }
+        
+        self.contentType = ContentType(rawValue: headerDic["Content-Type"]!)!
         config = URLSessionConfiguration.default
         config!.httpAdditionalHeaders = headerDic
     }
@@ -126,6 +140,10 @@ open class ShrimpRequest {
                         
                     }
                     break;
+                    
+                case .none:
+                    assertionFailure("Content-Type Error.")
+                    break
                     
                 }
 
@@ -210,10 +228,10 @@ open class ShrimpRequest {
             let code = httpResponse.statusCode
             let resultString = String(data: data, encoding: String.Encoding.utf8)
                 
-            let acceptableStatusCodes: CountableRange<Int> = 200..<300
-            if acceptableStatusCodes.contains(httpResponse.statusCode) {
+//            let acceptableStatusCodes: CountableRange<Int> = 200..<300
+//            if acceptableStatusCodes.contains(httpResponse.statusCode) {
                 
-                debugPrint("***ShrimpRequest-- Request URL --> \( String(describing: httpResponse.url?.absoluteString)) \n Result -> \(String(describing: resultString))")
+                debugPrint("***ShrimpRequest-- Request URL --> \( String(describing: httpResponse.url?.absoluteString)) \n StatusCode -> \(code)，Result -> \(String(describing: resultString))")
                     
                 DispatchQueue.main.async {
                     if self.responseDataHandler != nil {
@@ -227,7 +245,7 @@ open class ShrimpRequest {
                             
                         } catch {
                             debugPrint("***ShrimpRequet-- Error -> ß\(error)")
-                            self.errorHandler?(ShrimpError.createError(code,localizedDescription: "JSON serialization error"))
+                            self.errorHandler?(NSError(httpStatusCode: code,localizedDescription: "JSON serialization error"))
                         }
                         
                     }
@@ -235,23 +253,23 @@ open class ShrimpRequest {
                 }
 
                 //狀態碼錯誤
-            } else {
-                debugPrint("***ShrimpRequest-- Request URL --> \( httpResponse.url?.absoluteString) \n data -> \(resultString) \n ErrorCode -> \(code) \n")
-
-                if let msg = resultString {
-                    DispatchQueue.main.async {
-                        self.errorHandler?(ShrimpError.createError(code,localizedDescription: msg))
-                    }
-                }else if let msg = httpResponse.allHeaderFields["Status"] as? String{
-                    DispatchQueue.main.async {
-                        self.errorHandler?(ShrimpError.createError(code,localizedDescription: msg))
-                    }
-                }else{
-                    DispatchQueue.main.async {
-                        self.errorHandler?(ShrimpError.createError(code))
-                    }
-                }
-            }
+//            } else {
+//                debugPrint("***ShrimpRequest-- Request URL --> \( httpResponse.url?.absoluteString) \n data -> \(resultString) \n ErrorCode -> \(code) \n")
+//
+//                if let msg = resultString {
+//                    DispatchQueue.main.async {
+//                        self.errorHandler?(ShrimpError.createError(code,localizedDescription: msg))
+//                    }
+//                }else if let msg = httpResponse.allHeaderFields["Status"] as? String{
+//                    DispatchQueue.main.async {
+//                        self.errorHandler?(ShrimpError.createError(code,localizedDescription: msg))
+//                    }
+//                }else{
+//                    DispatchQueue.main.async {
+//                        self.errorHandler?(ShrimpError.createError(code))
+//                    }
+//                }
+//            }
             
             
         })
