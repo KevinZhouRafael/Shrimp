@@ -8,7 +8,6 @@
 
 import Foundation
 open class ShrimpRequest {
-
     
     fileprivate var urlRequest:NSMutableURLRequest!
     fileprivate var config:URLSessionConfiguration!
@@ -26,6 +25,9 @@ open class ShrimpRequest {
         
     }
     
+//    open func defaultHeaders() ->[String:String]{
+//        return [String:String]()
+//    }
     open func request(
                 _ method: Method,
                 api: ShrimpNetApi,
@@ -89,7 +91,7 @@ open class ShrimpRequest {
     
     fileprivate func buildHeader(_ method:Method,headers: [String: String]? = nil,contentType:ContentType? = nil){
         //header
-        var headerDic = [String:String]()
+        var headerDic = ShrimpConfigure.shared.defaultHeaders()
 
         switch method {
         case .GET:
