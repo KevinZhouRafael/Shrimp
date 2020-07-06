@@ -13,10 +13,11 @@ Shrimp is an simplify HTTP networking library written in Swift.
 - [x] Chainable Request / Response Methods
 - [x] Parameter Encoding
 - [x] GET / POST / PUT / DELETE
+- [x] Builtin JSON Request Serialization
 - [x] Resume Download Datas
 - [x] Download with Progress Notification
 - [ ] Upload files
-- [ ] Builtin JSON Request Serialization
+
 
 ## Example
 
@@ -110,8 +111,8 @@ func downloadComplete(noti:Notification) {
 
 ## Requirements
 - iOS 8.0+  
-- Xcode 7.3
-- Swift 3.0.1
+- Xcode 11.3
+- Swift 5
 
 ## Installation
 
@@ -121,11 +122,8 @@ Shrimp is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-# swift4 ,ios 10.0+
+# swift5+ ,ios 8.0+
 pod "Shrimp"
-
-#swift3, ios 8.0+
-pod "Shrimp", '== 0.2.1'
 ```
 
 ### Carthage
@@ -141,9 +139,6 @@ github "KevinZhouRafael/Shrimp"
 Rafael Zhou
 
 - Email me: <wumingapie@gmail.com>
-- Follow me on **Twitter**: [**@wumingapie**](https://twitter.com/wumingapie)
-- Contact me on **Facebook**: [**wumingapie**](https://www.facebook.com/wumingapie)
-- Contact me on **LinkedIn**: [**Rafael**](https://www.linkedin.com/in/rafael-zhou-7230943a/)
 
 ## License
 
