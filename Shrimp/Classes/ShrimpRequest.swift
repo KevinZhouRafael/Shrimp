@@ -20,6 +20,12 @@ open class ShrimpRequest {
     //Saved ContentType:  ContentType parameters > headers params > defaultContentType
     fileprivate var contentType:ContentType!
     
+    //request params saved
+    fileprivate var contentTypeP:ContentType?
+    fileprivate var urlStringP = ""
+    fileprivate var headersP:[String: String]?
+    fileprivate var methodP:Method = .GET
+    fileprivate var paramsP:[String: Any]?
     
     public init(){
         
@@ -60,6 +66,10 @@ open class ShrimpRequest {
     
     fileprivate func buildURL(_ method:Method,urlString:String,parameters: [String: Any]? = nil){
 
+        self.methodP = method
+        self.urlStringP = urlString
+        self.paramsP = parameters
+        
         var requestURL:URL = URL(string:"\(urlString)")!
         
         if parameters != nil {
@@ -90,6 +100,10 @@ open class ShrimpRequest {
     }
     
     fileprivate func buildHeader(_ method:Method,headers: [String: String]? = nil,contentType:ContentType? = nil){
+        self.methodP = method
+        self.headersP = headers
+        self.contentTypeP = contentType
+        
         //header
         var headerDic = ShrimpConfigure.shared.defaultHeaders()
 
@@ -120,13 +134,18 @@ open class ShrimpRequest {
     
     
     fileprivate func buildParameters(_ method:Method,parameters:[String: Any]? = nil){
+        self.methodP = method
+        self.paramsP = parameters
+        
         switch method {
         case .GET:
             break
         case .POST, .PUT, .DELETE:
             if parameters != nil {
+                var currentContentType = contentType
+                if contentTypeP != nil {currentContentType = contentTypeP!}
                 
-                switch contentType {
+                switch currentContentType {
                 case .UrlEncoded:
                     let queryString = query(parameters!)
                     
@@ -148,14 +167,9 @@ open class ShrimpRequest {
                     break
                     
                 }
-
-
             }
             break
-            
         }
-
-        
     }
     
     @discardableResult
@@ -202,7 +216,38 @@ open class ShrimpRequest {
         return self
     }
     
+    //MARK:重试
+    public func retry2(){
+        print("retry2")
+    }
+    public func retry(){
+        if task != nil {
+            task.cancel()
+            task = nil
+        }
+        
+        buildURL(methodP, urlString: urlStringP,parameters: paramsP)
+        buildHeader(methodP, headers: headersP,contentType: contentTypeP)
+        buildParameters(methodP, parameters: paramsP)
+        
+        requestNetWork()
+    }
     
+    //重试，只能设置一次。
+    fileprivate var retryMaxTimes:Int?
+    fileprivate var retryTimes:Int?
+    public func retry(times:Int = 1){
+        if retryTimes == nil {
+            retryMaxTimes = times
+            retryTimes = 0
+        }
+        if retryTimes! < retryMaxTimes! {
+            retry()
+            retryTimes! += 1
+        }
+    }
+    
+    //MARK: 请求网络
     fileprivate func requestNetWork(){
         let session = URLSession(configuration: config)
         

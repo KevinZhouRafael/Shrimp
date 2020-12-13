@@ -11,10 +11,11 @@ import Foundation
 public func request(
         _ method: Method,
         api: ShrimpNetApi,
+        contentType:ContentType? = nil,
         parameters: [String: Any]? = nil,
         headers: [String: String]? = nil)
         -> ShrimpRequest{
-            return ShrimpRequest().request(method, api: api, parameters: parameters, headers: headers)
+            return ShrimpRequest().request(method, api: api,contentType: contentType, parameters: parameters, headers: headers)
 }
 
 public func request(
