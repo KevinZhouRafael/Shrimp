@@ -27,6 +27,8 @@ open class ShrimpRequest {
     fileprivate var methodP:Method = .GET
     fileprivate var paramsP:[String: Any]?
     
+    fileprivate var isDisableAcceptableStatusCodes = false
+    fileprivate var acceptableStatusCodes: CountableRange<Int> = 200..<300
     public init(){
         
     }
@@ -216,7 +218,17 @@ open class ShrimpRequest {
         return self
     }
     
-    //MARK:重试
+    public func setStatusRange(_ range:CountableRange<Int>)->Self{
+        acceptableStatusCodes = range
+        return self
+    }
+    
+    public func disableAcceptableStatusCodes() -> Self{
+        isDisableAcceptableStatusCodes = true
+        return self
+    }
+    
+    //MARK:Retry
     public func retry2(){
         print("retry2")
     }
@@ -233,7 +245,7 @@ open class ShrimpRequest {
         requestNetWork()
     }
     
-    //重试，只能设置一次。
+    //Retry，only set once time. 只能設置一次。
     fileprivate var retryMaxTimes:Int?
     fileprivate var retryTimes:Int?
     public func retry(times:Int = 1){
@@ -247,12 +259,15 @@ open class ShrimpRequest {
         }
     }
     
-    //MARK: 请求网络
+    //MARK: Request Network 请求网络
     fileprivate func requestNetWork(){
         let session = URLSession(configuration: config)
         
         task = session.dataTask(with: urlRequest as URLRequest, completionHandler: { (data, response, error) in
-            
+//            guard let self = self else{
+//                debugPrint("Release 釋放")
+//                return
+//            }
             //guard error
             //guard data,response
             guard error == nil else{
@@ -275,8 +290,8 @@ open class ShrimpRequest {
             let code = httpResponse.statusCode
             let resultString = String(data: data, encoding: String.Encoding.utf8)
                 
-//            let acceptableStatusCodes: CountableRange<Int> = 200..<300
-//            if acceptableStatusCodes.contains(httpResponse.statusCode) {
+            if self.isDisableAcceptableStatusCodes ||
+                (!self.isDisableAcceptableStatusCodes && self.acceptableStatusCodes.contains(httpResponse.statusCode)) {
                 
                 debugPrint("***ShrimpRequest-- Request URL --> \( String(describing: httpResponse.url?.absoluteString)) \n StatusCode -> \(code)，Result -> \(String(describing: resultString))")
                     
@@ -299,24 +314,24 @@ open class ShrimpRequest {
                     
                 }
 
-                //狀態碼錯誤
-//            } else {
-//                debugPrint("***ShrimpRequest-- Request URL --> \( httpResponse.url?.absoluteString) \n data -> \(resultString) \n ErrorCode -> \(code) \n")
-//
-//                if let msg = resultString {
-//                    DispatchQueue.main.async {
-//                        self.errorHandler?(ShrimpError.createError(code,localizedDescription: msg))
-//                    }
-//                }else if let msg = httpResponse.allHeaderFields["Status"] as? String{
-//                    DispatchQueue.main.async {
-//                        self.errorHandler?(ShrimpError.createError(code,localizedDescription: msg))
-//                    }
-//                }else{
-//                    DispatchQueue.main.async {
-//                        self.errorHandler?(ShrimpError.createError(code))
-//                    }
-//                }
-//            }
+                //Http Status Error 狀態碼錯誤
+            } else {
+                debugPrint("***ShrimpRequest-- Request URL --> \( httpResponse.url?.absoluteString) \n data -> \(resultString) \n ErrorCode -> \(code) \n")
+
+                if let msg = resultString {
+                    DispatchQueue.main.async {
+                        self.errorHandler?(ShrimpError.createError(code,localizedDescription: msg))
+                    }
+                }else if let msg = httpResponse.allHeaderFields["Status"] as? String{
+                    DispatchQueue.main.async {
+                        self.errorHandler?(ShrimpError.createError(code,localizedDescription: msg))
+                    }
+                }else{
+                    DispatchQueue.main.async {
+                        self.errorHandler?(ShrimpError.createError(code))
+                    }
+                }
+            }
             
             
         })

@@ -11,7 +11,7 @@ import Foundation
 
 public extension ShrimpRequest{
     @discardableResult
-    func responseCodable<T:Codable>(_ responseHandler:@escaping (_ result:T,_ response:URLResponse?)->Void,
+    func responseCodable<T:Decodable>(_ responseHandler:@escaping (_ result:T,_ response:URLResponse?)->Void,
                                            errorHandler:((_ error:Error?)->Void)?)->ShrimpRequest{
 
             return responseString({ (resultString, urlResponse) in
@@ -37,7 +37,7 @@ public extension ShrimpRequest{
     }
     
     @discardableResult
-    func responseCodable<T:Codable>(_ responseHandler:@escaping (_ result:T, _ data:Data?,_ response:URLResponse?)->Void,
+    func responseCodable<T:Decodable>(_ responseHandler:@escaping (_ result:T, _ data:Data?,_ response:URLResponse?)->Void,
                                            errorHandler:((_ error:Error?)->Void)?)->ShrimpRequest{
 
             return responseData({ (resultData, urlResponse) in
