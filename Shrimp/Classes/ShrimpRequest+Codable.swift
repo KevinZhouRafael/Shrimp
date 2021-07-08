@@ -55,9 +55,9 @@ public extension ShrimpRequest{
                 decoder.dateDecodingStrategy = ShrimpConfigure.shared.dateDecodingStrategy
                 
                 do{
-                    let resultString = String(data: resultData, encoding: String.Encoding.utf8)!
-                    let responseResult = try decoder.decode(T.self, from: Data(resultString.utf8))
-                    
+//                    let resultString = String(data: resultData, encoding: String.Encoding.utf8)!
+//                    let responseResult = try decoder.decode(T.self, from: Data(resultString.utf8))
+                    let responseResult = try decoder.decode(T.self, from: resultData)
                     responseHandler(responseResult,resultData,urlResponse)
                     
                 }catch {
