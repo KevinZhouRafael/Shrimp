@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 open class ShrimpRequest {
     
     fileprivate var urlRequest:NSMutableURLRequest!
@@ -116,7 +117,6 @@ open class ShrimpRequest {
         case .POST, .PUT, .DELETE:
             headerDic["Content-Type"] = ShrimpConfigure.shared.DefaultPostContentType.rawValue
             break
-            
         }
         
         if headers != nil {
@@ -134,7 +134,6 @@ open class ShrimpRequest {
         config!.httpAdditionalHeaders = headerDic
     }
     
-    
     fileprivate func buildParameters(_ method:Method,parameters:[String: Any]? = nil){
         self.methodP = method
         self.paramsP = parameters
@@ -143,20 +142,20 @@ open class ShrimpRequest {
         case .GET:
             break
         case .POST, .PUT, .DELETE:
-            if parameters != nil {
+            if let params = parameters{
                 var currentContentType = contentType
                 if contentTypeP != nil {currentContentType = contentTypeP!}
                 
                 switch currentContentType {
                 case .UrlEncoded:
-                    let queryString = query(parameters!)
+                    let queryString = query(params)
                     
                     urlRequest.httpBody = queryString.data(using: String.Encoding.utf8)
                     break;
                     
                 case .JSON:
                     do{
-                        let data = try JSONSerialization.data(withJSONObject: parameters!, options: .prettyPrinted)
+                        let data = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
                         urlRequest.httpBody = data
                         
                     }catch{
@@ -264,6 +263,8 @@ open class ShrimpRequest {
         let session = URLSession(configuration: config)
         
         task = session.dataTask(with: urlRequest as URLRequest, completionHandler: { (data, response, error) in
+            ServerDate.update(response: response)
+            
 //            guard let self = self else{
 //                debugPrint("Release 釋放")
 //                return

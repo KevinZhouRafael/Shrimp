@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 public protocol ShrimpConfigureDelegate:class {
     func urlToKey(url:String) -> String
     func defaultHeaders()->[String:String]
@@ -24,9 +25,9 @@ public class ShrimpConfigure {
     public static let shared:ShrimpConfigure = ShrimpConfigure()
     
     public weak var delegate:ShrimpConfigureDelegate?
-
+    
     public var HOST:String = ""
-//    public var keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys
+    //    public var keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys
     
     public var DefaultGetContentType = ContentType.UrlEncoded
     public var DefaultPostContentType = ContentType.JSON
@@ -64,11 +65,11 @@ open class ShrimpNetApi:NSObject,ExpressibleByStringLiteral{
     required public init(stringLiteral value: ShrimpNetApi.StringLiteralType) {
         self.api = value
     }
-
+    
     public var path: String{
         return HOST + api
     }
-
+    
     open var HOST:String{
         return ShrimpConfigure.shared.HOST
     }
@@ -82,7 +83,7 @@ extension Formatter {
         formatter.calendar = Calendar(identifier: .iso8601)
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.timeZone = TimeZone.current
-//        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        //        formatter.timeZone = TimeZone(secondsFromGMT: 0)
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"
         return formatter
     }()
@@ -94,6 +95,15 @@ extension Formatter {
         //        formatter.timeZone = TimeZone(secondsFromGMT: 0)
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssXXXXX"
         return formatter
+    }()
+    
+    //https://blog.mro.name/2009/08/nsdateformatter-http-header/
+    static var gmt:DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+        dateFormatter.dateFormat = "EEE',' dd MMM yyyy HH':'mm':'ss 'GMT'"
+        return dateFormatter
     }()
 }
 
@@ -108,3 +118,51 @@ extension JSONDecoder.DateDecodingStrategy {
     }
 }
 
+//偏移量基本不变，因为服务器时间和systemUptime都在增加。
+struct ServerDate{
+    /// 获取当前时间
+    ///
+    /// - Returns: 如果有偏移时间，返回处理器启动时间 + 偏移时间。如果没有返回Date().timeIntervalSince1970
+    static func now() -> TimeInterval{
+        if let offsetStime = UserDefaults.standard.value(forKey: "Shrimp_Server_Offset_Time") as? TimeInterval{
+            return offsetStime + ProcessInfo().systemUptime
+        }else{
+            return Date().timeIntervalSince1970
+        }
+    }
+    
+    /// 更新偏移时间(每次网络返回时调用)
+    ///
+    /// - Parameter stime: 服务器时间
+    static func update(stime:TimeInterval?){
+        if let stime = stime {
+            let offsetStime = stime - ProcessInfo().systemUptime
+            UserDefaults.standard.set(offsetStime, forKey: "Shrimp_Server_Offset_Time")
+        }
+    }
+}
+
+extension ServerDate{
+    static func update(response:URLResponse?){
+        if let httpResponse = response as? HTTPURLResponse,
+           let dateHeader = httpResponse.allHeaderFields["Date"] as? String,
+           let date = Formatter.gmt.date(from: dateHeader){
+            
+            let serverTime = date.timeIntervalSince1970
+            var age:Int64 = 0
+            
+            if let ageHeader = httpResponse.allHeaderFields["Age"] as? String,
+               let ageInt = Int64(ageHeader){
+                age = ageInt
+            }
+            
+            update(stime: serverTime + Double(age))
+        }
+    }
+}
+
+extension ShrimpConfigure{
+    public static func serverTimeInterval() -> TimeInterval{
+        ServerDate.now()
+    }
+}

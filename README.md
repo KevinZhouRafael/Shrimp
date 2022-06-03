@@ -16,7 +16,7 @@ Shrimp is an simplify HTTP networking library written in Swift.
 - [x] Builtin JSON Request Serialization
 - [x] Resume Download Datas
 - [x] Download with Progress Notification
-- [ ] Upload files
+- [x] Auto Adjust Server Date
 
 
 ## Example
@@ -50,7 +50,24 @@ To run the example project, clone the repo, and run `pod install` from the Examp
                 
         })
 ```
+
+### Get Server Time
+Shrimp can auto adjust server time.
+Get server time like this:
+
+```swift
+extension Date{
+    static func serverNow()->Date{
+        Date(ShrimpConfigure.serverTimeInterval())
+    }
+}
+
+Date.serverNow()
+
+```
+
 ### DOWNLOAD
+More powerfull tools use [Reed Download](https://github.com/KevinZhouRafael/Reed).
 
 #### Start Download
 ```swift
@@ -108,6 +125,7 @@ func downloadComplete(noti:Notification) {
     DownloadManager.isHasResumDate(url:String)
 
 ```
+
 
 ## Requirements
 - iOS 8.0+  
