@@ -34,9 +34,6 @@ open class ShrimpRequest {
         
     }
     
-//    open func defaultHeaders() ->[String:String]{
-//        return [String:String]()
-//    }
     open func request(
                 _ method: Method,
                 api: ShrimpNetApi,
@@ -75,28 +72,30 @@ open class ShrimpRequest {
         
         var requestURL:URL = URL(string:"\(urlString)")!
         
-        if parameters != nil {
-            switch method {
-            case .GET:
-//                requestURL = URL(string:"\(urlString)?\(query(parameters!))")!s
-
-                var components = URLComponents(string: urlString)!
-                components.queryItems = [URLQueryItem]()
-                for (key, value) in parameters ?? [:] {
-                    let queryItem = URLQueryItem(name: key, value: "\(value)")
-                    components.queryItems!.append(queryItem)
+        var paramsDic = ShrimpConfigure.shared.defaultQueryParams()
+        switch method {
+        case .GET:
+            if parameters != nil {
+                for (key,value) in parameters! {
+                    paramsDic[key] = value
                 }
-                
-                components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
-                
-                requestURL = components.url!
-                
-                break
-            case .POST, .PUT, .DELETE:
-                
-                break
             }
+            
+            break
+//        case .POST, .PUT, .DELETE:
+//            break
+        default:
+            break
         }
+        
+        var components = URLComponents(string: urlString)!
+        components.queryItems = [URLQueryItem]()
+        for (key, value) in paramsDic{
+            let queryItem = URLQueryItem(name: key, value: "\(value)")
+            components.queryItems!.append(queryItem)
+        }
+        components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+        requestURL = components.url!
         
         urlRequest = NSMutableURLRequest(url: requestURL)
         urlRequest!.httpMethod = method.rawValue

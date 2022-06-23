@@ -11,6 +11,7 @@ import Foundation
 public protocol ShrimpConfigureDelegate:class {
     func urlToKey(url:String) -> String
     func defaultHeaders()->[String:String]
+    func defaultQueryParams()->[String:Any]
 }
 public extension ShrimpConfigureDelegate{
     func urlToKey(url:String) -> String{
@@ -18,6 +19,9 @@ public extension ShrimpConfigureDelegate{
     }
     func defaultHeaders()->[String:String]{
         return [String:String]()
+    }
+    func defaultQueryParams()->[String:Any]{
+        return [String:Any]()
     }
 }
 
@@ -35,11 +39,17 @@ public class ShrimpConfigure {
     private init(){
         
     }
+    
     public func urlToKey(url:String) -> String {
         return delegate?.urlToKey(url: url) ?? url
     }
+    
     func defaultHeaders()->[String:String]{
         return delegate?.defaultHeaders() ?? [String:String]()
+    }
+    
+    func defaultQueryParams()->[String:Any]{
+        return delegate?.defaultQueryParams() ?? [String:Any]()
     }
     
     var dateDecodingStrategy:JSONDecoder.DateDecodingStrategy{
