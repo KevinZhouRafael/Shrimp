@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol ShrimpConfigureDelegate:class {
+public protocol ShrimpConfigureDelegate:AnyObject {
     func urlToKey(url:String) -> String
     func defaultHeaders()->[String:String]
     func defaultQueryParams()->[String:Any]
@@ -32,6 +32,7 @@ public class ShrimpConfigure {
     
     public var HOST:String = ""
     //    public var keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys
+    public var timeoutIntervalForRequest:Double = 60.0
     
     public var DefaultGetContentType = ContentType.UrlEncoded
     public var DefaultPostContentType = ContentType.JSON
@@ -134,6 +135,7 @@ struct ServerDate{
     ///
     /// - Returns: 如果有偏移时间，返回处理器启动时间 + 偏移时间。如果没有返回Date().timeIntervalSince1970
     static func now() -> TimeInterval{
+        //TODO: userdefaults作为config的参数
         if let offsetStime = UserDefaults.standard.value(forKey: "Shrimp_Server_Offset_Time") as? TimeInterval{
             return offsetStime + ProcessInfo().systemUptime
         }else{

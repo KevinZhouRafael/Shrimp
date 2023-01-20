@@ -130,6 +130,7 @@ open class ShrimpRequest {
         
         self.contentType = ContentType(rawValue: headerDic["Content-Type"]!)!
         config = URLSessionConfiguration.default
+        config.timeoutIntervalForRequest = ShrimpConfigure.shared.timeoutIntervalForRequest
         config!.httpAdditionalHeaders = headerDic
     }
     

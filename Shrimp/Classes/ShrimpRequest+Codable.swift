@@ -42,7 +42,7 @@ public extension ShrimpRequest{
 
             return responseData({ (resultData, urlResponse) in
                 
-                guard resultData != nil, resultData.count > 0 else{
+                guard resultData.count > 0 else{
                     if let httpResponse = urlResponse as? HTTPURLResponse{
                         let code = httpResponse.statusCode
                         debugPrint("\(code)")

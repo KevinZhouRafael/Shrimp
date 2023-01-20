@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Shrimp'
-  s.version          = '0.5.2'
+  s.version          = '0.5.3'
   s.summary          = 'Shrimp is an simplify HTTP networking library.'
 
 # This description is used to generate tags and improve search results.
